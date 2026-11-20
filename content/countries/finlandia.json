@@ -1,0 +1,12 @@
+{
+  "name": "Finlandia",
+  "iso": "FI",
+  "region": "europe",
+  "values": {
+    "depression": 2.92,
+    "anxiety": 5.33,
+    "eating": 0.6,
+    "bipolar": 0.63,
+    "schizophrenia": 0.37
+  }
+}
