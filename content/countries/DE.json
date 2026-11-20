@@ -1,15 +1,13 @@
 {
-  "iso": "DE",
   "name": "Alemania",
-  "summary": "La alta densidad de servicios convive con el reto de coordinar atención ambulatoria y social.",
+  "iso": "DE",
   "region": "europe",
+  "summary": "La alta densidad de servicios convive con el reto de coordinar atención ambulatoria y social.",
   "values": {
     "depression": 4.2,
     "anxiety": 5.8,
     "eating": 0.43,
     "bipolar": 0.8,
-    "schizophrenia": 0.31
-  },
-  "policy": {},
-  "observations": []
+    "schizophrenia": 0.3
+  }
 }
