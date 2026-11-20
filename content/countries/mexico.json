@@ -1,0 +1,12 @@
+{
+  "name": "México",
+  "iso": "MX",
+  "region": "latam",
+  "values": {
+    "depression": 3.21,
+    "anxiety": 7.01,
+    "eating": 0.39,
+    "bipolar": 0.84,
+    "schizophrenia": 0.34
+  }
+}
