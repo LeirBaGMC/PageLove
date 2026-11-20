@@ -4,10 +4,10 @@
   "region": "europe",
   "summary": "La alta densidad de servicios convive con el reto de coordinar atención ambulatoria y social.",
   "values": {
-    "depression": 4.2,
-    "anxiety": 5.8,
-    "eating": 0.43,
-    "bipolar": 0.8,
-    "schizophrenia": 0.32
+    "depression": 4.35,
+    "anxiety": 6.36,
+    "eating": 0.44,
+    "bipolar": 0.56,
+    "schizophrenia": 0.3
   }
 }
