@@ -1,0 +1,29 @@
+{
+  "name": "mentatlas-react",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "predev": "node scripts/prepare-map.mjs",
+    "build": "vite build",
+    "prebuild": "node scripts/prepare-map.mjs",
+    "preview": "vite preview",
+    "format": "prettier --write index.html vite.config.js package.json scripts src"
+  },
+  "dependencies": {
+    "d3-geo": "^3.1.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@vitejs/plugin-react": "^6.3.0",
+    "iso-3166-1": "^2.1.1",
+    "prettier": "^3.10.1",
+    "tailwindcss": "^4.3.5",
+    "topojson-client": "^3.1.0",
+    "vite": "^8.3.8",
+    "world-atlas": "^2.0.2"
+  }
+}
