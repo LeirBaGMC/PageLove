@@ -1,0 +1,15 @@
+{
+  "iso": "EG",
+  "name": "Egipto",
+  "summary": "La atención especializada se combina con esfuerzos de integración comunitaria.",
+  "region": "africa",
+  "values": {
+    "depression": 4.1,
+    "anxiety": 5.3,
+    "eating": 0.26,
+    "bipolar": 0.52,
+    "schizophrenia": 0.28
+  },
+  "policy": {},
+  "observations": []
+}

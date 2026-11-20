@@ -1,0 +1,340 @@
+{
+  "content": [
+    {
+      "name": "countries",
+      "label": "Fichas de países",
+      "type": "collection",
+      "path": "content/countries",
+      "format": "json",
+      "filename": "{primary}.json",
+      "view": {
+        "fields": [
+          "name",
+          "iso",
+          "region"
+        ],
+        "primary": "name"
+      },
+      "fields": [
+        {
+          "name": "name",
+          "label": "Nombre del país",
+          "type": "string",
+          "required": true
+        },
+        {
+          "name": "iso",
+          "label": "Código ISO de dos letras en mayúsculas",
+          "type": "string",
+          "required": true,
+          "pattern": {
+            "regex": "^[A-Z]{2}$",
+            "message": "Usa dos letras mayúsculas."
+          }
+        },
+        {
+          "name": "region",
+          "label": "Región",
+          "type": "select",
+          "required": true,
+          "options": {
+            "values": [
+              {
+                "value": "latam",
+                "label": "Latinoamérica"
+              },
+              {
+                "value": "northamerica",
+                "label": "Norteamérica"
+              },
+              {
+                "value": "europe",
+                "label": "Europa"
+              },
+              {
+                "value": "asia",
+                "label": "Asia"
+              },
+              {
+                "value": "africa",
+                "label": "África"
+              },
+              {
+                "value": "oceania",
+                "label": "Oceanía"
+              }
+            ]
+          }
+        },
+        {
+          "name": "summary",
+          "label": "Descripción",
+          "type": "text"
+        },
+        {
+          "name": "values",
+          "label": "Valores ilustrativos de partida",
+          "type": "object",
+          "fields": [
+            {
+              "name": "depression",
+              "label": "Depresión",
+              "type": "number",
+              "options": {
+                "min": 0,
+                "max": 100,
+                "step": 0.01
+              }
+            },
+            {
+              "name": "anxiety",
+              "label": "Ansiedad",
+              "type": "number",
+              "options": {
+                "min": 0,
+                "max": 100,
+                "step": 0.01
+              }
+            },
+            {
+              "name": "eating",
+              "label": "Trastornos alimentarios",
+              "type": "number",
+              "options": {
+                "min": 0,
+                "max": 100,
+                "step": 0.01
+              }
+            },
+            {
+              "name": "bipolar",
+              "label": "Trastorno bipolar",
+              "type": "number",
+              "options": {
+                "min": 0,
+                "max": 100,
+                "step": 0.01
+              }
+            },
+            {
+              "name": "schizophrenia",
+              "label": "Esquizofrenia",
+              "type": "number",
+              "options": {
+                "min": 0,
+                "max": 100,
+                "step": 0.01
+              }
+            }
+          ]
+        },
+        {
+          "name": "observations",
+          "label": "Cifras documentadas por año y población",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "year",
+              "label": "Año",
+              "type": "select",
+              "required": true,
+              "options": {
+                "values": [
+                  "2019",
+                  "2020",
+                  "2021",
+                  "2022",
+                  "2023",
+                  "2024",
+                  "2025",
+                  "2026"
+                ]
+              }
+            },
+            {
+              "name": "group",
+              "label": "Población",
+              "type": "select",
+              "required": true,
+              "options": {
+                "values": [
+                  {
+                    "value": "general",
+                    "label": "General"
+                  },
+                  {
+                    "value": "women",
+                    "label": "Mujeres"
+                  },
+                  {
+                    "value": "men",
+                    "label": "Hombres"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "indicator",
+              "label": "Indicador",
+              "type": "select",
+              "required": true,
+              "options": {
+                "values": [
+                  {
+                    "value": "depression",
+                    "label": "Depresión"
+                  },
+                  {
+                    "value": "anxiety",
+                    "label": "Ansiedad"
+                  },
+                  {
+                    "value": "eating",
+                    "label": "Trastornos alimentarios"
+                  },
+                  {
+                    "value": "bipolar",
+                    "label": "Trastorno bipolar"
+                  },
+                  {
+                    "value": "schizophrenia",
+                    "label": "Esquizofrenia"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "value",
+              "label": "Porcentaje",
+              "type": "number",
+              "required": true,
+              "options": {
+                "min": 0,
+                "max": 100,
+                "step": 0.01
+              }
+            },
+            {
+              "name": "url",
+              "label": "Enlace a la fuente",
+              "type": "string",
+              "required": true
+            }
+          ]
+        },
+        {
+          "name": "policy",
+          "label": "Políticas públicas y respuesta del país",
+          "type": "object",
+          "fields": [
+            {
+              "name": "actions",
+              "label": "Qué se hace",
+              "type": "text"
+            },
+            {
+              "name": "how",
+              "label": "Cómo se trabaja",
+              "type": "text"
+            },
+            {
+              "name": "coverage",
+              "label": "Cobertura y acceso",
+              "type": "text"
+            },
+            {
+              "name": "indicators",
+              "label": "Qué se mide",
+              "type": "text"
+            },
+            {
+              "name": "plan",
+              "label": "Plan o marco vigente",
+              "type": "text"
+            },
+            {
+              "name": "updated",
+              "label": "Fecha de la fuente",
+              "type": "string"
+            },
+            {
+              "name": "source",
+              "label": "Institución y documento",
+              "type": "string"
+            },
+            {
+              "name": "link",
+              "label": "Enlace del documento",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "site",
+      "type": "file",
+      "label": "Portada, metodología y exposición",
+      "path": "content/site.json",
+      "format": "json",
+      "fields": [
+        {
+          "name": "showAdmin",
+          "label": "Mostrar acceso a Administración",
+          "type": "boolean"
+        },
+        {
+          "name": "introduction",
+          "label": "Introducción de la portada",
+          "type": "text"
+        },
+        {
+          "name": "shows",
+          "label": "Qué muestra",
+          "type": "text"
+        },
+        {
+          "name": "limits",
+          "label": "Qué no muestra",
+          "type": "text"
+        },
+        {
+          "name": "construction",
+          "label": "Cómo se construyó",
+          "type": "text"
+        },
+        {
+          "name": "community",
+          "label": "El consenso internacional se mueve hacia la comunidad",
+          "type": "text"
+        },
+        {
+          "name": "communityUrl",
+          "label": "Fuente de la guía comunitaria",
+          "type": "text"
+        },
+        {
+          "name": "references",
+          "label": "Referencias",
+          "type": "object",
+          "list": true,
+          "fields": [
+            {
+              "name": "label",
+              "label": "Institución y título",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "url",
+              "label": "Enlace",
+              "type": "string",
+              "required": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

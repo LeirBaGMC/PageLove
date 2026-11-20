@@ -1,0 +1,15 @@
+{
+  "iso": "CR",
+  "name": "Costa Rica",
+  "summary": "La atención primaria y la promoción comunitaria son ejes de articulación.",
+  "region": "latam",
+  "values": {
+    "depression": 4.7,
+    "anxiety": 6,
+    "eating": 0.36,
+    "bipolar": 0.71,
+    "schizophrenia": 0.31
+  },
+  "policy": {},
+  "observations": []
+}

@@ -1,13 +1,14 @@
-import { editorial as initialEditorial, fields } from "./editorial.js";
+import { catalog as countries, content, cmsUrl } from "./catalog.js";
+import { fields } from "./editorial.js";
 import React, { useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { geoNaturalEarth1, geoPath } from "d3-geo";
 import {
-  countries as baseCountries,
+  
   disorders,
-  regionProfiles,
+
   years,
-  buildSeries,
+
 } from "./data.js";
 import "./styles.css";
 
@@ -44,31 +45,6 @@ function safeSourceUrl(value) {
 function formatPct(value) {
   if (typeof value !== "number" || !Number.isFinite(value)) return "N/D";
   return `${value.toLocaleString("es-EC", { minimumFractionDigits: value < 1 ? 2 : 1, maximumFractionDigits: 2 })}%`;
-}
-
-function readStoredPolicies() {
-  try {
-    return JSON.parse(localStorage.getItem(STORAGE_POLICIES) || "{}");
-  } catch {
-    return {};
-  }
-}
-function readStoredCountries() {
-  try {
-    return JSON.parse(localStorage.getItem(STORAGE_COUNTRIES) || "[]");
-  } catch {
-    return [];
-  }
-}
-function getInitialCountries() {
-  const custom = readStoredCountries();
-  return [
-    ...baseCountries,
-    ...custom.filter(
-      (candidate) =>
-        !baseCountries.some((country) => country.iso === candidate.iso),
-    ),
-  ];
 }
 
 function Field({ label, children, hint }) {
@@ -819,481 +795,8 @@ function MethodView({ content }) {
     </section>
   );
 }
-function AdminView({ content, countries, publish, onPolicySaved }) {
-  const [selectedId, setSelectedId] = useState(countries[0]?.id || "");
-  const activeCountry =
-    countries.find((item) => item.id === selectedId) || countries[0];
-  const [form, setForm] = useState({});
-  const [status, setStatus] = useState("");
-  const [key, setKey] = useState("");
-  async function persist(next, editorial = content) {
-    try {
-      await publish(next, key, editorial);
-      return true;
-    } catch (error) {
-      setStatus(error.message);
-      return false;
-    }
-  }
-  const [newCountry, setNewCountry] = useState({
-    name: "",
-    iso: "",
-    region: "latam",
-    depression: "4.9",
-    anxiety: "6.5",
-    eating: "0.4",
-    bipolar: "0.7",
-    schizophrenia: "0.3",
-  });
-  useEffect(() => {
-    if (activeCountry) setForm({ ...activeCountry.policy });
-  }, [activeCountry]);
-  const update = (event) =>
-    setForm((previous) => ({
-      ...previous,
-      [event.target.name]: event.target.value,
-    }));
-  const updateNewCountry = (event) =>
-    setNewCountry((previous) => ({
-      ...previous,
-      [event.target.name]: event.target.value,
-    }));
-  const save = async (event) => {
-    event.preventDefault();
-    const next = countries.map((item) =>
-      item.id === activeCountry.id
-        ? {
-            ...item,
-            policy: {
-              ...item.policy,
-              ...form,
-              updated: new Date().getFullYear().toString(),
-            },
-          }
-        : item,
-    );
-    if (!(await persist(next))) return;
-    setStatus("Cambios publicados.");
-    onPolicySaved(next.find((item) => item.id === activeCountry.id));
-  };
-  const exportData = () => {
-    const blob = new Blob(
-      [
-        JSON.stringify(
-          Object.fromEntries(countries.map((item) => [item.id, item.policy])),
-          null,
-          2,
-        ),
-      ],
-      { type: "application/json" },
-    );
-    const href = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = href;
-    link.download = "mentatlas-politicas.json";
-    link.click();
-    URL.revokeObjectURL(href);
-  };
-  const importData = async (event) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
-    try {
-      const imported = JSON.parse(await file.text());
-      const next = countries.map((item) =>
-        imported[item.id]
-          ? { ...item, policy: { ...item.policy, ...imported[item.id] } }
-          : item,
-      );
-      if (!(await persist(next))) return;
-      setStatus("Políticas publicadas.");
-      onPolicySaved(next.find((item) => item.id === selectedId));
-    } catch {
-      setStatus(
-        "No se pudo importar: el archivo no tiene un JSON válido de políticas.",
-      );
-    }
-    event.target.value = "";
-  };
-  const addCountry = async (event) => {
-    event.preventDefault();
-    const name = newCountry.name.trim();
-    const iso = newCountry.iso.trim().toUpperCase();
-    if (!name || !/^[A-Z]{2}$/.test(iso)) {
-      setStatus("Escribe un nombre y un código ISO de dos letras.");
-      return;
-    }
-    if (countries.some((item) => item.iso === iso)) {
-      setStatus(`Ya existe una ficha para ${iso}.`);
-      return;
-    }
-    const values = Object.fromEntries(
-      Object.keys(disorders).map((key) => [key, Number(newCountry[key])]),
-    );
-    if (
-      Object.values(values).some(
-        (value) => !Number.isFinite(value) || value < 0 || value > 100,
-      )
-    ) {
-      setStatus("Usa porcentajes válidos entre 0 y 100.");
-      return;
-    }
-    const profile = regionProfiles[newCountry.region];
-    const country = {
-      id: iso.toLowerCase(),
-      name,
-      iso,
-      region: newCountry.region,
-      regionLabel: profile.label,
-      values,
-      summary: "Ficha incorporada al atlas.",
-      dataYear: 2023,
-      series: buildSeries(values),
-      score: null,
-      isCustom: true,
-      policy: {},
-    };
-    const next = [...countries, country];
-    if (!(await persist(next))) return;
-    setSelectedId(country.id);
-    setForm({ ...country.policy });
-    setStatus(`${name} se publicó.`);
-    setNewCountry((previous) => ({ ...previous, name: "", iso: "" }));
-  };
-  return (
-    <section
-      className="content-section"
-      aria-labelledby="admin-title"
-      data-reveal
-    >
-      <div className="section-heading">
-        <p className="eyebrow">Administración</p>
-        <h2 id="admin-title">Mantén las fichas de política.</h2>
-        <p>Las fichas publicadas se comparten con todos los visitantes.</p>
-      </div>
-      <Field label="Clave de edición">
-        <input
-          type="password"
-          value={key}
-          onChange={(e) => setKey(e.target.value)}
-          autoComplete="off"
-        />
-      </Field>
-      <p role="status">{status}</p>
-      <details className="panel admin-form">
-        <summary>
-          Editar metodología, referencias y recuadro internacional
-        </summary>
-        <form
-          key={JSON.stringify(content)}
-          onSubmit={async (e) => {
-            e.preventDefault();
-            const data = new FormData(e.currentTarget);
-            const references = data
-              .get("refs")
-              .split("\n")
-              .filter(Boolean)
-              .map((line) => line.split("|").map((x) => x.trim()));
-            if (
-              references.some(([label, url]) => !label || !safeSourceUrl(url))
-            )
-              return setStatus(
-                "Cada referencia necesita un título y un enlace válido.",
-              );
-            if (
-              await persist(countries, {
-                ...Object.fromEntries(data),
-                references,
-              })
-            )
-              setStatus("Contenido publicado.");
-          }}
-        >
-          {Object.entries({
-            ...methodLabels,
-            introduction:"Introducción de la portada",
-            community: "Atención comunitaria",
-            communityUrl: "Enlace de la guía",
-          }).map(([key, label]) => (
-            <Field label={label} key={key}>
-              <textarea name={key} defaultValue={content[key]} />
-            </Field>
-          ))}
-          <Field label="Referencias · una por línea, título | enlace">
-            <textarea
-              rows="6"
-              name="refs"
-              defaultValue={content.references
-                .map((r) => r.join(" | "))
-                .join("\n")}
-            />
-          </Field>
-          <button className="button button-primary">Guardar contenido</button>
-        </form>
-      </details>
-      <div className="admin-actions panel">
-        <Field label="País que vas a editar">
-          <select
-            value={activeCountry?.id || ""}
-            onChange={(event) => setSelectedId(event.target.value)}
-          >
-            {countries.map((item) => (
-              <option key={item.id} value={item.id}>
-                {item.name}
-              </option>
-            ))}
-          </select>
-        </Field>
-        <div className="admin-action-buttons">
-          <button
-            type="button"
-            className="button button-outline"
-            disabled={!activeCountry}
-            onClick={async () => {
-              if (
-                window.confirm(
-                  "¿Eliminar la ficha de " +
-                    activeCountry.name +
-                    " para todos los visitantes?",
-                ) &&
-                (await persist(
-                  countries.filter((c) => c.id !== activeCountry.id),
-                ))
-              )
-                setStatus("Ficha eliminada.");
-            }}
-          >
-            Eliminar ficha
-          </button>
-
-          <button
-            type="button"
-            className="button button-outline"
-            onClick={exportData}
-          >
-            Exportar JSON
-          </button>
-          <label className="button button-soft file-button">
-            Importar JSON
-            <input
-              type="file"
-              accept="application/json,.json"
-              onChange={importData}
-              aria-label="Importar políticas desde un archivo JSON"
-            />
-          </label>
-        </div>
-      </div>
-      {activeCountry && (
-        <form className="panel admin-form" onSubmit={save}>
-          <h3 className="admin-form-title">
-            Editar políticas · {activeCountry.name}
-          </h3>
-          <div className="form-grid">
-            <Field label="Resumen del enfoque">
-              <textarea
-                name="plan"
-                value={form.plan || ""}
-                onChange={update}
-                rows="2"
-              />
-            </Field>
-            <Field label="Fuente">
-              <input
-                name="source"
-                value={form.source || ""}
-                onChange={update}
-              />
-            </Field>
-            <Field label="Enlace de fuente">
-              <input
-                name="link"
-                type="url"
-                value={form.link || ""}
-                onChange={update}
-              />
-            </Field>
-            <Field label="Acciones">
-              <textarea
-                name="actions"
-                value={form.actions || ""}
-                onChange={update}
-                rows="3"
-              />
-            </Field>
-            <Field label="Implementación">
-              <textarea
-                name="how"
-                value={form.how || ""}
-                onChange={update}
-                rows="3"
-              />
-            </Field>
-            <Field label="Cobertura y brechas">
-              <textarea
-                name="coverage"
-                value={form.coverage || ""}
-                onChange={update}
-                rows="3"
-              />
-            </Field>
-            <Field label="Indicadores de seguimiento">
-              <textarea
-                name="indicators"
-                value={form.indicators || ""}
-                onChange={update}
-                rows="3"
-              />
-            </Field>
-          </div>
-          <div className="form-footer">
-            <p aria-live="polite">{status}</p>
-            <button className="button button-primary" type="submit">
-              Guardar cambios
-            </button>
-          </div>
-        </form>
-      )}
-      {activeCountry && (
-        <form
-          key={activeCountry.id}
-          className="panel admin-form"
-          onSubmit={async (e) => {
-            e.preventDefault();
-            const data = new FormData(e.currentTarget);
-            const y = data.get("year"),
-              g = data.get("group"),
-              k = data.get("indicator"),
-              v = data.get("value");
-            const c = activeCountry;
-            const entry = {
-              ...c.series?.[y]?.[g],
-              [k]: v === "" ? null : Number(v),
-            };
-            const updated = {
-              ...c,
-              name: data.get("name"),
-              summary: data.get("summary"),
-              series: { ...c.series, [y]: { ...c.series?.[y], [g]: entry } },
-              indicatorSources: {
-                ...c.indicatorSources,
-                [y + g + k]: data.get("url"),
-              },
-            };
-            if (
-              await persist(
-                countries.map((item) => (item.id === c.id ? updated : item)),
-              )
-            )
-              setStatus("Indicador y descripción publicados.");
-          }}
-        >
-          <h3>Corregir un indicador</h3>
-          <Field label="Nombre">
-            <input name="name" defaultValue={activeCountry.name} required />
-          </Field>
-          <Field label="Descripción">
-            <textarea name="summary" defaultValue={activeCountry.summary} />
-          </Field>
-          <Field label="Año">
-            <select name="year">
-              {years.map((y) => (
-                <option key={y}>{y}</option>
-              ))}
-            </select>
-          </Field>
-          <Field label="Población">
-            <select name="group">
-              <option value="general">General</option>
-              <option value="women">Mujeres</option>
-              <option value="men">Hombres</option>
-            </select>
-          </Field>
-          <Field label="Indicador">
-            <select name="indicator">
-              {DISORDER_OPTIONS.map(([k, d]) => (
-                <option key={k} value={k}>
-                  {d.label}
-                </option>
-              ))}
-            </select>
-          </Field>
-          <Field label="Nuevo porcentaje · vacío para eliminar">
-            <input type="number" min="0" max="100" step="any" name="value" />
-          </Field>
-          <Field label="Fuente del cambio">
-            <input type="url" required name="url" />
-          </Field>
-          <button className="button button-primary">Publicar corrección</button>
-        </form>
-      )}
-      <form className="panel admin-form add-country-form" onSubmit={addCountry}>
-        <div className="admin-subhead">
-          <div>
-            <p className="eyebrow">Nueva ficha</p>
-            <h3>Añadir país al atlas</h3>
-          </div>
-          <span className="field-hint">Se conserva en este navegador.</span>
-        </div>
-        <div className="form-grid">
-          <Field label="Nombre">
-            <input
-              name="name"
-              value={newCountry.name}
-              onChange={updateNewCountry}
-              required
-            />
-          </Field>
-          <Field label="Código ISO-2">
-            <input
-              name="iso"
-              value={newCountry.iso}
-              onChange={updateNewCountry}
-              maxLength="2"
-              pattern="[A-Za-z]{2}"
-              required
-            />
-          </Field>
-          <Field label="Región">
-            <select
-              name="region"
-              value={newCountry.region}
-              onChange={updateNewCountry}
-            >
-              {Object.entries(regionProfiles).map(([key, profile]) => (
-                <option key={key} value={key}>
-                  {profile.label}
-                </option>
-              ))}
-            </select>
-          </Field>
-          {DISORDER_OPTIONS.map(([key, item]) => (
-            <Field key={key} label={`${item.label} (%)`}>
-              <input
-                name={key}
-                type="number"
-                min="0"
-                max="100"
-                step="0.01"
-                value={newCountry[key]}
-                onChange={updateNewCountry}
-                required
-              />
-            </Field>
-          ))}
-        </div>
-        <div className="form-footer">
-          <span />
-          <button className="button button-outline" type="submit">
-            Añadir ficha
-          </button>
-        </div>
-      </form>
-    </section>
-  );
-}
-
 function App() {
-  const [countries, setCountries] = useState(baseCountries);
+
   const [selectedId, setSelectedId] = useState("ec");
   const [region, setRegion] = useState("all");
   const [disorder, setDisorder] = useState("depression");
@@ -1358,7 +861,7 @@ function App() {
     setMapError("");
     try {
       const response = await fetch(
-        "/world.geojson",
+        import.meta.env.BASE_URL + "world.geojson",
         signal ? { signal } : undefined,
       );
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -1392,63 +895,6 @@ function App() {
     loadMap(controller.signal);
     return () => controller.abort();
   }, []);
-  const endpoint = "/api/catalog";
-  const [content, setContent] = useState(initialEditorial);
-  const [editable, setEditable] = useState(false);
-  const [sha, setSha] = useState("");
-  useEffect(() => {
-    if (!endpoint) return;
-    const controller = new AbortController();
-    async function refresh() {
-      try {
-        const response = await fetch(endpoint, {
-          signal: controller.signal,
-          cache: "no-store",
-        });
-        if (!response.ok) return;
-        const data = await response.json();
-        if (!controller.signal.aborted) {
-          setEditable(data.editable === true);
-          if (activeTab === "admin" && !data.editable) setActiveTab("explorar");
-        }
-        if (
-          !controller.signal.aborted &&
-          data.sha &&
-          data.sha !== sha &&
-          (activeTab !== "admin" || !sha) &&
-          Array.isArray(data.countries)
-        ) {
-          setContent(data.editorial || initialEditorial);
-          setCountries(data.countries);
-          setSha(data.sha);
-        }
-      } catch {}
-    }
-    if (activeTab !== "admin" || !sha) refresh();
-    const timer = setInterval(refresh, 15000);
-    return () => {
-      controller.abort();
-      clearInterval(timer);
-    };
-  }, [activeTab, sha, endpoint]);
-  async function publish(next, key, editorial) {
-    if (!endpoint || !sha)
-      throw new Error("El catálogo compartido todavía no está conectado.");
-    const response = await fetch(endpoint, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + key,
-      },
-      body: JSON.stringify({ countries: next, sha, editorial }),
-    });
-    const result = await response.json();
-    if (!response.ok) throw new Error(result.error || "No se pudo publicar.");
-    setContent(editorial);
-    setCountries(next);
-    setSha(result.sha);
-  }
-
   const selectCountry = (iso) => {
     const country = countries.find((item) => item.iso === iso);
     setSelectedId(country?.id || iso);
@@ -1538,14 +984,14 @@ function App() {
               ["metodologia", "04", "Metodología"],
               ["admin", "05", "Administración"],
             ]
-              .filter(([tab]) => tab !== "admin" || editable)
+              .filter(([tab]) => tab !== "admin" || content.showAdmin)
               .map(([tab, number, label]) => (
                 <button
                   type="button"
                   key={tab}
                   className={`nav-item ${activeTab === tab ? "active" : ""}`}
                   aria-current={activeTab === tab ? "page" : undefined}
-                  onClick={() => changeTab(tab)}
+                  onClick={() => tab === "admin" ? window.location.assign(cmsUrl) : changeTab(tab)}
                 >
                   <span>{number}</span>
                   {label}
@@ -1813,18 +1259,10 @@ function App() {
               country={policyCountry}
               countries={countries}
               onCountryChange={(id) => setPolicyCountryId(id)}
-              onEdit={editable ? () => changeTab("admin") : null}
+              onEdit={content.showAdmin ? () => window.location.assign(cmsUrl) : null}
             />
           )}
           {activeTab === "metodologia" && <MethodView content={content} />}
-          {activeTab === "admin" && editable && (
-            <AdminView
-              content={content}
-              countries={countries}
-              publish={publish}
-              onPolicySaved={onAdminSaved}
-            />
-          )}
           <footer className="page-footer">
             <div className="footer-brand">
               <span className="brand-mark" aria-hidden="true">

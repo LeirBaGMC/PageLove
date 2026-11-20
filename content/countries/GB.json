@@ -1,0 +1,15 @@
+{
+  "iso": "GB",
+  "name": "Reino Unido",
+  "summary": "El NHS permite observar cómo el acceso temprano se mide junto a una demanda creciente.",
+  "region": "europe",
+  "values": {
+    "depression": 4.6,
+    "anxiety": 6.6,
+    "eating": 0.5,
+    "bipolar": 0.85,
+    "schizophrenia": 0.32
+  },
+  "policy": {},
+  "observations": []
+}

@@ -1,0 +1,15 @@
+{
+  "iso": "BO",
+  "name": "Bolivia",
+  "summary": "La integración comunitaria y la formación de personal son claves para ampliar la cobertura.",
+  "region": "latam",
+  "values": {
+    "depression": 4.3,
+    "anxiety": 5.4,
+    "eating": 0.3,
+    "bipolar": 0.62,
+    "schizophrenia": 0.29
+  },
+  "policy": {},
+  "observations": []
+}

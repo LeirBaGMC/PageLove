@@ -1,0 +1,15 @@
+{
+  "iso": "PL",
+  "name": "Polonia",
+  "summary": "La expansión de servicios comunitarios busca reducir la dependencia hospitalaria.",
+  "region": "europe",
+  "values": {
+    "depression": 4.6,
+    "anxiety": 6,
+    "eating": 0.44,
+    "bipolar": 0.78,
+    "schizophrenia": 0.31
+  },
+  "policy": {},
+  "observations": []
+}

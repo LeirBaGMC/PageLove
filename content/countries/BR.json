@@ -1,0 +1,20 @@
+{
+  "iso": "BR",
+  "name": "Brasil",
+  "summary": "La RAPS permite observar la transición desde la institucionalización hacia redes territoriales.",
+  "region": "latam",
+  "values": {
+    "depression": 5.1,
+    "anxiety": 6.2,
+    "eating": 0.39,
+    "bipolar": 0.8,
+    "schizophrenia": 0.33
+  },
+  "policy": {
+    "plan": "Rede de Atenção Psicossocial (RAPS)",
+    "how": "La red articula los servicios del Sistema Único de Saúde, incluidos los centros de atención psicosocial.",
+    "source": "Ministério da Saúde · RAPS",
+    "link": "https://www.gov.br/saude/pt-br/composicao/saes/desmad/raps"
+  },
+  "observations": []
+}

@@ -1,0 +1,15 @@
+{
+  "iso": "VN",
+  "name": "Vietnam",
+  "summary": "La red distrital y el primer nivel sostienen la expansión de servicios.",
+  "region": "asia",
+  "values": {
+    "depression": 3.7,
+    "anxiety": 4.4,
+    "eating": 0.25,
+    "bipolar": 0.49,
+    "schizophrenia": 0.27
+  },
+  "policy": {},
+  "observations": []
+}

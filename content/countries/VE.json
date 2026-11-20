@@ -1,0 +1,15 @@
+{
+  "iso": "VE",
+  "name": "Venezuela",
+  "summary": "La disponibilidad de servicios y datos puede variar ampliamente por territorio.",
+  "region": "latam",
+  "values": {
+    "depression": 4.8,
+    "anxiety": 6,
+    "eating": 0.35,
+    "bipolar": 0.7,
+    "schizophrenia": 0.31
+  },
+  "policy": {},
+  "observations": []
+}

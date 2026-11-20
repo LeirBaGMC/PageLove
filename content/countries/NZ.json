@@ -1,0 +1,15 @@
+{
+  "iso": "NZ",
+  "name": "Nueva Zelanda",
+  "summary": "La prevención del suicidio y los servicios culturalmente seguros son prioritarios.",
+  "region": "oceania",
+  "values": {
+    "depression": 4.8,
+    "anxiety": 6.3,
+    "eating": 0.48,
+    "bipolar": 0.82,
+    "schizophrenia": 0.32
+  },
+  "policy": {},
+  "observations": []
+}

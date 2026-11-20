@@ -1,0 +1,15 @@
+{
+  "iso": "GH",
+  "name": "Ghana",
+  "summary": "La capacitación mhGAP y la atención comunitaria sostienen la expansión.",
+  "region": "africa",
+  "values": {
+    "depression": 3.7,
+    "anxiety": 4.8,
+    "eating": 0.21,
+    "bipolar": 0.43,
+    "schizophrenia": 0.25
+  },
+  "policy": {},
+  "observations": []
+}

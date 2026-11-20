@@ -1,0 +1,15 @@
+{
+  "iso": "AR",
+  "name": "Argentina",
+  "summary": "La política nacional pone el foco en derechos, comunidad y sustitución progresiva del modelo asilar.",
+  "region": "latam",
+  "values": {
+    "depression": 4.7,
+    "anxiety": 5.9,
+    "eating": 0.35,
+    "bipolar": 0.7,
+    "schizophrenia": 0.31
+  },
+  "policy": {},
+  "observations": []
+}

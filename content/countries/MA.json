@@ -1,0 +1,15 @@
+{
+  "iso": "MA",
+  "name": "Marruecos",
+  "summary": "La reforma busca coordinar servicios hospitalarios, ambulatorios y comunitarios.",
+  "region": "africa",
+  "values": {
+    "depression": 4,
+    "anxiety": 5.2,
+    "eating": 0.25,
+    "bipolar": 0.5,
+    "schizophrenia": 0.27
+  },
+  "policy": {},
+  "observations": []
+}

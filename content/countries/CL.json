@@ -1,0 +1,15 @@
+{
+  "iso": "CL",
+  "name": "Chile",
+  "summary": "La expansión de servicios en atención primaria convive con brechas de especialistas y continuidad.",
+  "region": "latam",
+  "values": {
+    "depression": 5.2,
+    "anxiety": 6.8,
+    "eating": 0.42,
+    "bipolar": 0.75,
+    "schizophrenia": 0.34
+  },
+  "policy": {},
+  "observations": []
+}

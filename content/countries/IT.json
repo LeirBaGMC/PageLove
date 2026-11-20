@@ -1,0 +1,15 @@
+{
+  "iso": "IT",
+  "name": "Italia",
+  "summary": "La reforma comunitaria y la coordinación local son piezas centrales.",
+  "region": "europe",
+  "values": {
+    "depression": 4.1,
+    "anxiety": 5.7,
+    "eating": 0.42,
+    "bipolar": 0.74,
+    "schizophrenia": 0.3
+  },
+  "policy": {},
+  "observations": []
+}

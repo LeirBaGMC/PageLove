@@ -1,0 +1,15 @@
+{
+  "iso": "KR",
+  "name": "Corea del Sur",
+  "summary": "La prevención del suicidio y la salud mental escolar tienen alta prioridad.",
+  "region": "asia",
+  "values": {
+    "depression": 4,
+    "anxiety": 5.2,
+    "eating": 0.37,
+    "bipolar": 0.62,
+    "schizophrenia": 0.29
+  },
+  "policy": {},
+  "observations": []
+}

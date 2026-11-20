@@ -1,0 +1,21 @@
+{
+  "iso": "CO",
+  "name": "Colombia",
+  "summary": "El mapa sitúa la salud mental en un sistema con énfasis creciente en atención primaria y territorio.",
+  "region": "latam",
+  "values": {
+    "depression": 4.9,
+    "anxiety": 6.5,
+    "eating": 0.38,
+    "bipolar": 0.72,
+    "schizophrenia": 0.32
+  },
+  "policy": {
+    "plan": "Política Nacional de Salud Mental · Decreto 0729 de 2025",
+    "actions": "El decreto adopta la política nacional y establece el marco de la respuesta pública.",
+    "source": "Ministerio de Salud y Protección Social",
+    "link": "https://www.minsalud.gov.co/Normatividad_Nuevo/DECRETO%200729%20DEL%2025%20DE%20JUNIO%20DE%202025.pdf",
+    "updated": "2025"
+  },
+  "observations": []
+}

@@ -1,0 +1,19 @@
+{
+  "iso": "MX",
+  "name": "México",
+  "summary": "La ficha cruza prevalencia, prevención del suicidio y red de atención comunitaria.",
+  "region": "latam",
+  "values": {
+    "depression": 4.8,
+    "anxiety": 6,
+    "eating": 0.35,
+    "bipolar": 0.72,
+    "schizophrenia": 0.31
+  },
+  "policy": {
+    "actions": "Los CECOSAMA ofrecen atención comunitaria en salud mental y adicciones.",
+    "source": "CONASAMA · Centros Comunitarios",
+    "link": "https://www.gob.mx/conasama/es/articulos/que-son-los-centros-comunitarios-de-salud-mental-y-adicciones?idiom=es"
+  },
+  "observations": []
+}

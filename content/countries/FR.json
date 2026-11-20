@@ -1,0 +1,15 @@
+{
+  "iso": "FR",
+  "name": "Francia",
+  "summary": "La política combina cobertura pública, atención ambulatoria y prevención.",
+  "region": "europe",
+  "values": {
+    "depression": 4.4,
+    "anxiety": 6.2,
+    "eating": 0.46,
+    "bipolar": 0.78,
+    "schizophrenia": 0.31
+  },
+  "policy": {},
+  "observations": []
+}

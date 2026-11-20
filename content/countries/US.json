@@ -1,0 +1,20 @@
+{
+  "iso": "US",
+  "name": "Estados Unidos",
+  "summary": "Alta disponibilidad de medición y servicios, con diferencias de acceso y cobertura.",
+  "region": "northamerica",
+  "values": {
+    "depression": 6.3,
+    "anxiety": 8.2,
+    "eating": 0.65,
+    "bipolar": 1.1,
+    "schizophrenia": 0.34
+  },
+  "policy": {
+    "actions": "La guía federal para la atención en crisis describe acceso a contacto inmediato, respuesta móvil y espacios de atención.",
+    "plan": "National Behavioral Health Crisis Care Guidance (2025)",
+    "source": "SAMHSA",
+    "link": "https://www.samhsa.gov/mental-health/national-behavioral-health-crisis-care"
+  },
+  "observations": []
+}

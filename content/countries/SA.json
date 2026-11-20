@@ -1,0 +1,15 @@
+{
+  "iso": "SA",
+  "name": "Arabia Saudita",
+  "summary": "La expansión de servicios y la atención primaria son prioridades recientes.",
+  "region": "asia",
+  "values": {
+    "depression": 3.7,
+    "anxiety": 4.7,
+    "eating": 0.27,
+    "bipolar": 0.52,
+    "schizophrenia": 0.28
+  },
+  "policy": {},
+  "observations": []
+}

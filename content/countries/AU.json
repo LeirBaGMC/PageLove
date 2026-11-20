@@ -1,0 +1,15 @@
+{
+  "iso": "AU",
+  "name": "Australia",
+  "summary": "La tele salud mental y la adaptación cultural ayudan a cubrir territorios remotos.",
+  "region": "oceania",
+  "values": {
+    "depression": 5,
+    "anxiety": 6.7,
+    "eating": 0.52,
+    "bipolar": 0.9,
+    "schizophrenia": 0.33
+  },
+  "policy": {},
+  "observations": []
+}

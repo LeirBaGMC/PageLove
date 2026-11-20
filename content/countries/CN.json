@@ -1,0 +1,15 @@
+{
+  "iso": "CN",
+  "name": "China",
+  "summary": "La expansión de servicios y la integración en primer nivel avanzan por regiones.",
+  "region": "asia",
+  "values": {
+    "depression": 3.8,
+    "anxiety": 4.8,
+    "eating": 0.28,
+    "bipolar": 0.55,
+    "schizophrenia": 0.27
+  },
+  "policy": {},
+  "observations": []
+}

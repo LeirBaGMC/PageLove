@@ -1,0 +1,15 @@
+{
+  "iso": "DZ",
+  "name": "Argelia",
+  "summary": "La respuesta busca equilibrar servicios hospitalarios y atención comunitaria.",
+  "region": "africa",
+  "values": {
+    "depression": 4,
+    "anxiety": 5.1,
+    "eating": 0.24,
+    "bipolar": 0.48,
+    "schizophrenia": 0.27
+  },
+  "policy": {},
+  "observations": []
+}

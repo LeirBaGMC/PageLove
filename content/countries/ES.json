@@ -1,0 +1,21 @@
+{
+  "iso": "ES",
+  "name": "España",
+  "summary": "La cobertura pública amplia se cruza con presión sobre acceso, espera y salud juvenil.",
+  "region": "europe",
+  "values": {
+    "depression": 4.5,
+    "anxiety": 6,
+    "eating": 0.45,
+    "bipolar": 0.75,
+    "schizophrenia": 0.31
+  },
+  "policy": {
+    "plan": "Plan de Acción de Salud Mental 2025–2027",
+    "actions": "El plan establece las acciones del Sistema Nacional de Salud para el periodo 2025–2027.",
+    "source": "Ministerio de Sanidad de España",
+    "link": "https://www.sanidad.gob.es/areas/calidadAsistencial/estrategias/saludMental/docs/Plan_accion_salud_mental_2025_27.pdf",
+    "updated": "2025"
+  },
+  "observations": []
+}

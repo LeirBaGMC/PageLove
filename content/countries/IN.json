@@ -1,0 +1,15 @@
+{
+  "iso": "IN",
+  "name": "India",
+  "summary": "La escala territorial hace centrales la atención primaria, mhGAP y la formación.",
+  "region": "asia",
+  "values": {
+    "depression": 3.3,
+    "anxiety": 3.9,
+    "eating": 0.25,
+    "bipolar": 0.5,
+    "schizophrenia": 0.28
+  },
+  "policy": {},
+  "observations": []
+}

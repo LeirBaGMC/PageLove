@@ -1,0 +1,15 @@
+{
+  "iso": "TH",
+  "name": "Tailandia",
+  "summary": "La atención primaria y los equipos distritales amplían el acceso.",
+  "region": "asia",
+  "values": {
+    "depression": 3.8,
+    "anxiety": 4.6,
+    "eating": 0.29,
+    "bipolar": 0.54,
+    "schizophrenia": 0.28
+  },
+  "policy": {},
+  "observations": []
+}

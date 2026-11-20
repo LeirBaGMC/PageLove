@@ -1,0 +1,15 @@
+{
+  "iso": "SE",
+  "name": "Suecia",
+  "summary": "La respuesta se apoya en atención pública, infancia y prevención.",
+  "region": "europe",
+  "values": {
+    "depression": 4.2,
+    "anxiety": 6.1,
+    "eating": 0.48,
+    "bipolar": 0.82,
+    "schizophrenia": 0.31
+  },
+  "policy": {},
+  "observations": []
+}

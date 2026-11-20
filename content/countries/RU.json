@@ -1,0 +1,15 @@
+{
+  "iso": "RU",
+  "name": "Rusia",
+  "summary": "La escala territorial y la continuidad de atención comunitaria son claves para leer la respuesta.",
+  "region": "asia",
+  "values": {
+    "depression": 4.1,
+    "anxiety": 5,
+    "eating": 0.28,
+    "bipolar": 0.58,
+    "schizophrenia": 0.29
+  },
+  "policy": {},
+  "observations": []
+}

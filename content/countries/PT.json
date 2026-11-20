@@ -1,0 +1,15 @@
+{
+  "iso": "PT",
+  "name": "Portugal",
+  "summary": "La integración en el SNS permite seguir continuidad y acceso temprano.",
+  "region": "europe",
+  "values": {
+    "depression": 4.3,
+    "anxiety": 5.9,
+    "eating": 0.43,
+    "bipolar": 0.76,
+    "schizophrenia": 0.3
+  },
+  "policy": {},
+  "observations": []
+}

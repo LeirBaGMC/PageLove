@@ -1,0 +1,15 @@
+{
+  "iso": "GT",
+  "name": "Guatemala",
+  "summary": "La brecha de personal y la atención fuera de áreas urbanas condicionan la respuesta.",
+  "region": "latam",
+  "values": {
+    "depression": 4.2,
+    "anxiety": 5.3,
+    "eating": 0.29,
+    "bipolar": 0.6,
+    "schizophrenia": 0.28
+  },
+  "policy": {},
+  "observations": []
+}

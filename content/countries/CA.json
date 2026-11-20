@@ -1,0 +1,15 @@
+{
+  "iso": "CA",
+  "name": "Canadá",
+  "summary": "El sistema público convive con brechas de oportunidad y una agenda comunitaria.",
+  "region": "northamerica",
+  "values": {
+    "depression": 5.5,
+    "anxiety": 7.1,
+    "eating": 0.55,
+    "bipolar": 0.9,
+    "schizophrenia": 0.34
+  },
+  "policy": {},
+  "observations": []
+}

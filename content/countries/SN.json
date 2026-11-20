@@ -1,0 +1,15 @@
+{
+  "iso": "SN",
+  "name": "Senegal",
+  "summary": "La articulación entre comunidad, primer nivel y servicios especializados es prioritaria.",
+  "region": "africa",
+  "values": {
+    "depression": 3.8,
+    "anxiety": 4.8,
+    "eating": 0.22,
+    "bipolar": 0.42,
+    "schizophrenia": 0.25
+  },
+  "policy": {},
+  "observations": []
+}

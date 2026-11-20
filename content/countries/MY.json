@@ -1,0 +1,15 @@
+{
+  "iso": "MY",
+  "name": "Malasia",
+  "summary": "La política trabaja en prevención, acceso temprano y reducción del estigma.",
+  "region": "asia",
+  "values": {
+    "depression": 3.9,
+    "anxiety": 4.8,
+    "eating": 0.29,
+    "bipolar": 0.55,
+    "schizophrenia": 0.28
+  },
+  "policy": {},
+  "observations": []
+}
