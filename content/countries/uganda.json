@@ -1,0 +1,12 @@
+{
+  "name": "Uganda",
+  "iso": "UG",
+  "region": "africa",
+  "values": {
+    "depression": 3.64,
+    "anxiety": 6.19,
+    "eating": 0.12,
+    "bipolar": 0.45,
+    "schizophrenia": 0.28
+  }
+}
