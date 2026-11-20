@@ -1,3 +1,4 @@
+import { readObject, writeObject } from "./manus-storage.mjs";
 import { readFile, writeFile, rename, mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { createHash } from "node:crypto";
@@ -5,16 +6,33 @@ import { countries } from "../src/data.js";
 import { editorial } from "../src/editorial.js";
 const path = resolve(process.env.CATALOG_FILE || "storage/catalog.json");
 let busy = false;
+function remote() {
+  return Boolean(
+    process.env.MANUS_API_URL ||
+    process.env.MANUS_API_KEY ||
+    process.env.MENTATLAS_HOSTED,
+  );
+}
 async function read() {
   let raw;
-  try {
-    raw = await readFile(path, "utf8");
-  } catch (e) {
-    if (e.code !== "ENOENT") throw e;
-    raw = JSON.stringify({ countries, editorial });
-  }
+  let etag = null,
+    missing = false;
+  if (remote()) {
+    const object = await readObject();
+    etag = object.etag;
+    missing = object.raw === null;
+    raw = object.raw ?? JSON.stringify({ countries, editorial });
+  } else
+    try {
+      raw = await readFile(path, "utf8");
+    } catch (e) {
+      if (e.code !== "ENOENT") throw e;
+      raw = JSON.stringify({ countries, editorial });
+    }
   return {
     ...JSON.parse(raw),
+    etag,
+    missing,
     sha: createHash("sha256").update(raw).digest("hex"),
   };
 }
@@ -57,17 +75,26 @@ export async function catalog(req, res, next) {
     if (busy) return reply(409, { error: "Hay otra edición en curso." });
     busy = true;
     locked = true;
-    if (data.sha !== (await read()).sha)
+    const previous = await read();
+    if (data.sha !== previous.sha)
       return reply(409, {
         error: "El catálogo cambió. Recarga antes de guardar.",
       });
-    await mkdir(dirname(path), { recursive: true });
-    await writeFile(
-      path + ".tmp",
-      JSON.stringify({ countries: data.countries, editorial: data.editorial }),
-    );
-    await rename(path + ".tmp", path);
-    reply(200, { sha: (await read()).sha });
+    const body = JSON.stringify({
+      countries: data.countries,
+      editorial: data.editorial,
+    });
+    if (remote()) {
+      if (!(await writeObject(body, previous)))
+        return reply(409, {
+          error: "Otra edición se guardó primero. Recarga antes de guardar.",
+        });
+    } else {
+      await mkdir(dirname(path), { recursive: true });
+      await writeFile(path + ".tmp", body);
+      await rename(path + ".tmp", path);
+    }
+    reply(200, { sha: createHash("sha256").update(body).digest("hex") });
   } catch {
     reply(500, { error: "No se pudo leer o guardar el catálogo." });
   } finally {

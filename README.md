@@ -31,8 +31,8 @@ Para generar la versión estática de producción: `npm run build`.
 - `public/world.geojson`: geometrías del mapa.
 # PageLove
 
-## Publicación y exposición
+## Publicación en Manus
 
-Compila con `npm run build` y arranca el servidor con `npm start`. Configura EDITOR_KEY como secreto del servidor y CATALOG_FILE como ruta en un volumen persistente. Usa una sola instancia del servidor por archivo. Las funciones de edición se habilitan cuando el servidor dispone de clave. Para la exposición configura PRESENTATION_MODE=1 y reinicia. La web oculta Administración y la API devuelve 403 ante escrituras. En desarrollo Vite lee .env.local. En producción usa las variables del alojamiento.
+Compilar con npm run build e iniciar con npm start. Configurar en el servidor MANUS_API_URL, MANUS_API_KEY y EDITOR_KEY. El servidor solicita URLs firmadas para mentatlas/catalogo.json. Antes de la primera edición presenta el catálogo inicial si el objeto devuelve 404. El primer guardado crea el objeto. Un despliegue posterior lee el objeto existente. Para proteger ediciones concurrentes, Storage debe devolver ETag y admitir PUT condicional.
 
-Antes de alojar en Manus, confirma que el proyecto admite un proceso Node y un volumen persistente. Un despliegue solo estático permite consultar la versión inicial. La base gestionada de Manus es otra opción y su activación requiere una decisión del propietario.
+En el mismo subdominio, Administración solicita la clave de edición. Configurar PRESENTATION_MODE=1 y reiniciar oculta el panel y bloquea escrituras. Vite puede trabajar con disco local durante el desarrollo.
