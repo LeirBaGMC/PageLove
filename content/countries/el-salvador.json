@@ -1,0 +1,12 @@
+{
+  "name": "El Salvador",
+  "iso": "SV",
+  "region": "latam",
+  "values": {
+    "depression": 3.13,
+    "anxiety": 6.18,
+    "eating": 0.3,
+    "bipolar": 0.74,
+    "schizophrenia": 0.32
+  }
+}
