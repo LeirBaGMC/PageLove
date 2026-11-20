@@ -1,0 +1,12 @@
+{
+  "name": "Cuba",
+  "iso": "CU",
+  "region": "latam",
+  "values": {
+    "depression": 3.72,
+    "anxiety": 7.41,
+    "eating": 0.31,
+    "bipolar": 0.73,
+    "schizophrenia": 0
+  }
+}
