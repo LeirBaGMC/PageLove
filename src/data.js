@@ -879,6 +879,12 @@ const policyOverrides = {
   },
 };
 
+const nationalPolicies = {
+  ec:{plan:"Política Nacional de Salud Mental 2025–2030",source:"Ministerio de Salud Pública de Ecuador",link:policyOverrides.ec.link},
+  mx:{actions:"Los CECOSAMA ofrecen atención comunitaria en salud mental y adicciones.",source:"CONASAMA · Centros Comunitarios",link:"https://www.gob.mx/conasama/es/articulos/que-son-los-centros-comunitarios-de-salud-mental-y-adicciones?idiom=es"},
+  br:{plan:"Rede de Atenção Psicossocial (RAPS)",how:"La red articula los servicios del Sistema Único de Saúde, incluidos los centros de atención psicosocial.",source:"Ministério da Saúde · RAPS",link:"https://www.gov.br/saude/pt-br/composicao/saes/desmad/raps"},
+  us:{actions:"La guía federal para la atención en crisis describe acceso a contacto inmediato, respuesta móvil y espacios de atención.",plan:"National Behavioral Health Crisis Care Guidance (2025)",source:"SAMHSA",link:"https://www.samhsa.gov/mental-health/national-behavioral-health-crisis-care"}
+};
 const countries = rawCountries.map(
   ([id, name, iso, region, values, summary]) => {
     const profile = regionProfiles[region];
@@ -893,8 +899,8 @@ const countries = rawCountries.map(
       summary,
       dataYear: 2023,
       series: buildSeries(values),
-      score: override.score || profile.score,
-      policy: { ...profile, ...override, year: 2026, updated: "2026" },
+      score: null,
+      policy: nationalPolicies[id] || {},
     };
   },
 );

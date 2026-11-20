@@ -9,7 +9,8 @@
     "build": "vite build",
     "prebuild": "node scripts/prepare-map.mjs",
     "preview": "vite preview",
-    "format": "prettier --write index.html vite.config.js package.json scripts src"
+    "format": "prettier --write index.html vite.config.js package.json scripts src",
+    "start": "node api/server.mjs"
   },
   "dependencies": {
     "d3-geo": "^3.1.2",

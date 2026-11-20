@@ -1,3 +1,4 @@
+import { editorial as initialEditorial, fields } from "./editorial.js";
 import React, { useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { geoNaturalEarth1, geoPath } from "d3-geo";
@@ -133,9 +134,9 @@ function MapView({
           name: properties.name || "Territorio sin nombre",
           d: feature._path || "",
           hasData: Boolean(country),
-          value:
-            country?.series?.[year]?.[group]?.[disorder] ??
-            country?.values?.[disorder],
+          value: (country?.series?.[year]?.[group] || country?.values)?.[
+            disorder
+          ],
           isSelected: country?.id === selectedId || iso === selectedIso,
           isMuted: region !== "all" && country && country.region !== region,
         };
@@ -415,6 +416,14 @@ function CountryPanel({
               </button>
             ))}
           </div>
+          {Object.keys(shownValues).map((k) => (
+            <Source
+              key={k}
+              url={country.indicatorSources?.[seriesYear + group + k]}
+            >
+              {disorders[k]?.label}
+            </Source>
+          ))}
           <IndicatorBars values={shownValues} selectedDisorder={disorder} />
           <div className="country-insights">
             <div>
@@ -422,7 +431,11 @@ function CountryPanel({
               <span>indicador más alto</span>
             </div>
             <div>
-              <strong>{country.score}/5</strong>
+              <strong>
+                {Number.isFinite(country.score)
+                  ? country.score + "/5"
+                  : "Pendiente"}
+              </strong>
               <span>respuesta pública</span>
             </div>
           </div>
@@ -430,7 +443,7 @@ function CountryPanel({
             Estimación orientativa para explorar órdenes de magnitud.
             Definiciones, años y métodos no son equivalentes entre países.
           </p>
-          {Number.isFinite(country.score) ? (
+          {country.policy?.plan ? (
             <button
               type="button"
               className="button button-outline full-width"
@@ -656,6 +669,17 @@ function CompareView({
           </span>
         </div>
       </div>
+      <h3>Respuesta pública</h3>
+      <div className="method-grid">
+        {[a, b].map((c, i) => (
+          <article key={i} className="panel method-card">
+            <h3>{c?.name}</h3>
+            <p>{c?.policy.actions || "Pendiente de documentación nacional."}</p>
+            <p>{c?.policy.coverage}</p>
+            <Source url={c?.policy.link} />
+          </article>
+        ))}
+      </div>
       <p className="caveat wide-caveat">
         Las series anuales y por grupo poblacional son aproximaciones generadas
         para explorar tendencias. No sustituyen estadísticas oficiales
@@ -665,7 +689,7 @@ function CompareView({
   );
 }
 
-function PolicyView({ country, countries, onCountryChange, onEdit }) {
+function PolicyView({ content, country, countries, onCountryChange, onEdit }) {
   return (
     <section
       className="content-section"
@@ -693,9 +717,7 @@ function PolicyView({ country, countries, onCountryChange, onEdit }) {
             ))}
           </select>
         </Field>
-        <span className="policy-badge">
-          <i /> Revisión 2026
-        </span>
+        <span className="policy-badge">Ficha nacional</span>
       </div>
       {country ? (
         <article className="panel policy-card">
@@ -704,135 +726,115 @@ function PolicyView({ country, countries, onCountryChange, onEdit }) {
             <div>
               <p className="eyebrow">{country.regionLabel} · marco público</p>
               <h3>{country.name}</h3>
-              <p>
-                Actualización de referencia: {country.policy.updated || "2026"}
-              </p>
+              <p>{country.policy.source || "Documentación pendiente"}</p>
             </div>
             <div className="score-block">
-              <strong>{country.score}/5</strong>
+              <strong>
+                {Number.isFinite(country.score)
+                  ? country.score + "/5"
+                  : "Pendiente"}
+              </strong>
               <span>respuesta pública</span>
             </div>
           </div>
-          <div className="policy-focus">
-            <span className="eyebrow">Enfoque principal</span>
-            <p>{country.policy.plan}</p>
-          </div>
           <div className="policy-grid">
+            {fields.map(([field, title]) => (
+              <div key={field}>
+                <h4>{title}</h4>
+                <p>
+                  {country.policy[field] ||
+                    "Pendiente de documentación nacional."}
+                </p>
+              </div>
+            ))}
             <div>
-              <h4>Qué hace</h4>
-              <p>{country.policy.actions}</p>
-            </div>
-            <div>
-              <h4>Cómo se implementa</h4>
-              <p>{country.policy.how}</p>
-            </div>
-            <div>
-              <h4>Cobertura y brechas</h4>
-              <p>{country.policy.coverage}</p>
-            </div>
-            <div>
-              <h4>Indicadores de seguimiento</h4>
-              <p>{country.policy.indicators}</p>
+              <h4>Actualización y fuente</h4>
+              <p>
+                {country.policy.source || "Fuente pendiente"} ·{" "}
+                {country.policy.updated || "Fecha pendiente"}
+              </p>
+              <Source url={country.policy.link} />
             </div>
           </div>
-          <div className="policy-footer">
-            {safeSourceUrl(country.policy.link) ? (
-              <a
-                href={safeSourceUrl(country.policy.link)}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Fuente: {country.policy.source || "fuentes públicas"}{" "}
-                <span aria-hidden="true">↗</span>
-              </a>
-            ) : (
-              <span className="source-unavailable">
-                Fuente: {country.policy.source || "fuentes públicas"}
-              </span>
-            )}
-            <button type="button" className="text-button" onClick={onEdit}>
-              Editar ficha local
+          {onEdit && (
+            <button className="text-button" onClick={onEdit}>
+              Editar ficha
             </button>
-          </div>
+          )}
         </article>
       ) : (
         <div className="panel empty-state">
           No hay una ficha de política para este país.
         </div>
       )}
+      <aside className="source-card">
+        <h3>El consenso internacional se mueve hacia la comunidad</h3>
+        <p>{content.community}</p>
+        <Source url={content.communityUrl}>Consultar guía de la OMS</Source>
+      </aside>
     </section>
   );
 }
 
-function MethodView() {
-  return (
-    <section
-      className="content-section"
-      aria-labelledby="method-title"
-      data-reveal
+function Source({ url, children = "Abrir fuente" }) {
+  const href = safeSourceUrl(url);
+  return href ? (
+    <a
+      className="button button-outline"
+      href={href}
+      target="_blank"
+      rel="noreferrer"
     >
+      {children} ↗
+    </a>
+  ) : null;
+}
+const methodLabels = {
+  shows: "Qué muestra",
+  limits: "Qué no muestra",
+  construction: "Cómo se construyó",
+};
+function MethodView({ content }) {
+  return (
+    <section className="content-section">
       <div className="section-heading">
-        <p className="eyebrow">04 / Metodología</p>
-        <h2 id="method-title">Datos útiles, límites visibles.</h2>
-        <p>
-          Este atlas orienta una primera lectura. Cada cifra necesita contexto
-          antes de convertirse en una conclusión.
-        </p>
+        <h2>Metodología</h2>
       </div>
       <div className="method-grid">
+        {Object.entries(methodLabels).map(([key, title]) => (
+          <article className="panel method-card" key={key}>
+            <h3>{title}</h3>
+            <p>{content[key] || "Pendiente de información."}</p>
+          </article>
+        ))}
         <article className="panel method-card">
-          <span className="method-number">01</span>
-          <h3>Qué mide</h3>
-          <p>
-            Prevalencias indicativas de depresión, ansiedad, trastornos
-            alimentarios, trastorno bipolar y esquizofrenia para explorar
-            diferencias y órdenes de magnitud.
-          </p>
+          <h3>Fuentes de información</h3>
+          {content.references.map(([label, url], i) => (
+            <Source key={i} url={url}>
+              {label}
+            </Source>
+          ))}
         </article>
-        <article className="panel method-card">
-          <span className="method-number">02</span>
-          <h3>De dónde viene</h3>
-          <p>
-            Referencias públicas de OMS, OPS, ministerios y OWID/GBD. Consulta
-            las fuentes vinculadas en las fichas antes de reutilizar un dato.
-          </p>
-        </article>
-        <article className="panel method-card">
-          <span className="method-number">03</span>
-          <h3>Qué no permite afirmar</h3>
-          <p>
-            Las definiciones, métodos, cobertura y años pueden diferir. Las
-            cifras no sirven para diagnosticar, predecir casos individuales ni
-            ordenar países como una clasificación oficial.
-          </p>
-        </article>
-        <article className="panel method-card">
-          <span className="method-number">04</span>
-          <h3>Series temporales</h3>
-          <p>
-            Las curvas por año y grupo poblacional se presentan como
-            aproximaciones exploratorias; no son estimaciones oficiales
-            desagregadas para cada territorio.
-          </p>
-        </article>
-      </div>
-      <div className="source-strip panel">
-        <div>
-          <p className="eyebrow">Fuentes de referencia</p>
-          <strong>OMS · OPS · OWID / GBD · ministerios de salud</strong>
-        </div>
-        <span>Consulta: 2026</span>
       </div>
     </section>
   );
 }
-
-function AdminView({ countries, setCountries, onPolicySaved }) {
+function AdminView({ content, countries, publish, onPolicySaved }) {
   const [selectedId, setSelectedId] = useState(countries[0]?.id || "");
   const activeCountry =
     countries.find((item) => item.id === selectedId) || countries[0];
   const [form, setForm] = useState({});
   const [status, setStatus] = useState("");
+  const [key, setKey] = useState("");
+  async function persist(next, editorial = content) {
+    try {
+      await publish(next, key, editorial);
+      return true;
+    } catch (error) {
+      setStatus(error.message);
+      return false;
+    }
+  }
   const [newCountry, setNewCountry] = useState({
     name: "",
     iso: "",
@@ -856,7 +858,7 @@ function AdminView({ countries, setCountries, onPolicySaved }) {
       ...previous,
       [event.target.name]: event.target.value,
     }));
-  const save = (event) => {
+  const save = async (event) => {
     event.preventDefault();
     const next = countries.map((item) =>
       item.id === activeCountry.id
@@ -870,12 +872,8 @@ function AdminView({ countries, setCountries, onPolicySaved }) {
           }
         : item,
     );
-    setCountries(next);
-    const policies = Object.fromEntries(
-      next.map((item) => [item.id, item.policy]),
-    );
-    localStorage.setItem(STORAGE_POLICIES, JSON.stringify(policies));
-    setStatus(`Ficha de ${activeCountry.name} guardada en este navegador.`);
+    if (!(await persist(next))) return;
+    setStatus("Cambios publicados.");
     onPolicySaved(next.find((item) => item.id === activeCountry.id));
   };
   const exportData = () => {
@@ -906,9 +904,8 @@ function AdminView({ countries, setCountries, onPolicySaved }) {
           ? { ...item, policy: { ...item.policy, ...imported[item.id] } }
           : item,
       );
-      setCountries(next);
-      localStorage.setItem(STORAGE_POLICIES, JSON.stringify(imported));
-      setStatus("Políticas importadas en este navegador.");
+      if (!(await persist(next))) return;
+      setStatus("Políticas publicadas.");
       onPolicySaved(next.find((item) => item.id === selectedId));
     } catch {
       setStatus(
@@ -917,7 +914,7 @@ function AdminView({ countries, setCountries, onPolicySaved }) {
     }
     event.target.value = "";
   };
-  const addCountry = (event) => {
+  const addCountry = async (event) => {
     event.preventDefault();
     const name = newCountry.name.trim();
     const iso = newCountry.iso.trim().toUpperCase();
@@ -948,22 +945,18 @@ function AdminView({ countries, setCountries, onPolicySaved }) {
       region: newCountry.region,
       regionLabel: profile.label,
       values,
-      summary: "Ficha añadida localmente para exploración.",
+      summary: "Ficha incorporada al atlas.",
       dataYear: 2023,
       series: buildSeries(values),
-      score: profile.score,
+      score: null,
       isCustom: true,
-      policy: { ...profile, year: 2026, updated: "2026" },
+      policy: {},
     };
     const next = [...countries, country];
-    setCountries(next);
-    localStorage.setItem(
-      STORAGE_COUNTRIES,
-      JSON.stringify(next.filter((item) => item.isCustom)),
-    );
+    if (!(await persist(next))) return;
     setSelectedId(country.id);
     setForm({ ...country.policy });
-    setStatus(`${name} se añadió a este navegador.`);
+    setStatus(`${name} se publicó.`);
     setNewCountry((previous) => ({ ...previous, name: "", iso: "" }));
   };
   return (
@@ -973,13 +966,70 @@ function AdminView({ countries, setCountries, onPolicySaved }) {
       data-reveal
     >
       <div className="section-heading">
-        <p className="eyebrow">05 / Administración local</p>
+        <p className="eyebrow">Administración</p>
         <h2 id="admin-title">Mantén las fichas de política.</h2>
-        <p>
-          Los cambios se guardan solo en este navegador. Esta pantalla no
-          implementa autenticación de servidor.
-        </p>
+        <p>Las fichas publicadas se comparten con todos los visitantes.</p>
       </div>
+      <Field label="Clave de edición">
+        <input
+          type="password"
+          value={key}
+          onChange={(e) => setKey(e.target.value)}
+          autoComplete="off"
+        />
+      </Field>
+      <p role="status">{status}</p>
+      <details className="panel admin-form">
+        <summary>
+          Editar metodología, referencias y recuadro internacional
+        </summary>
+        <form
+          key={JSON.stringify(content)}
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const data = new FormData(e.currentTarget);
+            const references = data
+              .get("refs")
+              .split("\n")
+              .filter(Boolean)
+              .map((line) => line.split("|").map((x) => x.trim()));
+            if (
+              references.some(([label, url]) => !label || !safeSourceUrl(url))
+            )
+              return setStatus(
+                "Cada referencia necesita un título y un enlace válido.",
+              );
+            if (
+              await persist(countries, {
+                ...Object.fromEntries(data),
+                references,
+              })
+            )
+              setStatus("Contenido publicado.");
+          }}
+        >
+          {Object.entries({
+            ...methodLabels,
+            introduction:"Introducción de la portada",
+            community: "Atención comunitaria",
+            communityUrl: "Enlace de la guía",
+          }).map(([key, label]) => (
+            <Field label={label} key={key}>
+              <textarea name={key} defaultValue={content[key]} />
+            </Field>
+          ))}
+          <Field label="Referencias · una por línea, título | enlace">
+            <textarea
+              rows="6"
+              name="refs"
+              defaultValue={content.references
+                .map((r) => r.join(" | "))
+                .join("\n")}
+            />
+          </Field>
+          <button className="button button-primary">Guardar contenido</button>
+        </form>
+      </details>
       <div className="admin-actions panel">
         <Field label="País que vas a editar">
           <select
@@ -994,6 +1044,27 @@ function AdminView({ countries, setCountries, onPolicySaved }) {
           </select>
         </Field>
         <div className="admin-action-buttons">
+          <button
+            type="button"
+            className="button button-outline"
+            disabled={!activeCountry}
+            onClick={async () => {
+              if (
+                window.confirm(
+                  "¿Eliminar la ficha de " +
+                    activeCountry.name +
+                    " para todos los visitantes?",
+                ) &&
+                (await persist(
+                  countries.filter((c) => c.id !== activeCountry.id),
+                ))
+              )
+                setStatus("Ficha eliminada.");
+            }}
+          >
+            Eliminar ficha
+          </button>
+
           <button
             type="button"
             className="button button-outline"
@@ -1024,7 +1095,6 @@ function AdminView({ countries, setCountries, onPolicySaved }) {
                 value={form.plan || ""}
                 onChange={update}
                 rows="2"
-                required
               />
             </Field>
             <Field label="Fuente">
@@ -1081,6 +1151,79 @@ function AdminView({ countries, setCountries, onPolicySaved }) {
               Guardar cambios
             </button>
           </div>
+        </form>
+      )}
+      {activeCountry && (
+        <form
+          key={activeCountry.id}
+          className="panel admin-form"
+          onSubmit={async (e) => {
+            e.preventDefault();
+            const data = new FormData(e.currentTarget);
+            const y = data.get("year"),
+              g = data.get("group"),
+              k = data.get("indicator"),
+              v = data.get("value");
+            const c = activeCountry;
+            const entry = {
+              ...c.series?.[y]?.[g],
+              [k]: v === "" ? null : Number(v),
+            };
+            const updated = {
+              ...c,
+              name: data.get("name"),
+              summary: data.get("summary"),
+              series: { ...c.series, [y]: { ...c.series?.[y], [g]: entry } },
+              indicatorSources: {
+                ...c.indicatorSources,
+                [y + g + k]: data.get("url"),
+              },
+            };
+            if (
+              await persist(
+                countries.map((item) => (item.id === c.id ? updated : item)),
+              )
+            )
+              setStatus("Indicador y descripción publicados.");
+          }}
+        >
+          <h3>Corregir un indicador</h3>
+          <Field label="Nombre">
+            <input name="name" defaultValue={activeCountry.name} required />
+          </Field>
+          <Field label="Descripción">
+            <textarea name="summary" defaultValue={activeCountry.summary} />
+          </Field>
+          <Field label="Año">
+            <select name="year">
+              {years.map((y) => (
+                <option key={y}>{y}</option>
+              ))}
+            </select>
+          </Field>
+          <Field label="Población">
+            <select name="group">
+              <option value="general">General</option>
+              <option value="women">Mujeres</option>
+              <option value="men">Hombres</option>
+            </select>
+          </Field>
+          <Field label="Indicador">
+            <select name="indicator">
+              {DISORDER_OPTIONS.map(([k, d]) => (
+                <option key={k} value={k}>
+                  {d.label}
+                </option>
+              ))}
+            </select>
+          </Field>
+          <Field label="Nuevo porcentaje · vacío para eliminar">
+            <input type="number" min="0" max="100" step="any" name="value" />
+          </Field>
+          <Field label="Fuente del cambio">
+            <input type="url" required name="url" />
+          </Field>
+          <button className="button button-primary">Publicar corrección</button>
         </form>
       )}
       <form className="panel admin-form add-country-form" onSubmit={addCountry}>
@@ -1150,7 +1293,7 @@ function AdminView({ countries, setCountries, onPolicySaved }) {
 }
 
 function App() {
-  const [countries, setCountries] = useState(getInitialCountries);
+  const [countries, setCountries] = useState(baseCountries);
   const [selectedId, setSelectedId] = useState("ec");
   const [region, setRegion] = useState("all");
   const [disorder, setDisorder] = useState("depression");
@@ -1249,17 +1392,62 @@ function App() {
     loadMap(controller.signal);
     return () => controller.abort();
   }, []);
+  const endpoint = "/api/catalog";
+  const [content, setContent] = useState(initialEditorial);
+  const [editable, setEditable] = useState(false);
+  const [sha, setSha] = useState("");
   useEffect(() => {
-    const saved = readStoredPolicies();
-    if (Object.keys(saved).length)
-      setCountries((items) =>
-        items.map((item) =>
-          saved[item.id]
-            ? { ...item, policy: { ...item.policy, ...saved[item.id] } }
-            : item,
-        ),
-      );
-  }, []);
+    if (!endpoint) return;
+    const controller = new AbortController();
+    async function refresh() {
+      try {
+        const response = await fetch(endpoint, {
+          signal: controller.signal,
+          cache: "no-store",
+        });
+        if (!response.ok) return;
+        const data = await response.json();
+        if (!controller.signal.aborted) {
+          setEditable(data.editable === true);
+          if (activeTab === "admin" && !data.editable) setActiveTab("explorar");
+        }
+        if (
+          !controller.signal.aborted &&
+          data.sha &&
+          data.sha !== sha &&
+          (activeTab !== "admin" || !sha) &&
+          Array.isArray(data.countries)
+        ) {
+          setContent(data.editorial || initialEditorial);
+          setCountries(data.countries);
+          setSha(data.sha);
+        }
+      } catch {}
+    }
+    if (activeTab !== "admin" || !sha) refresh();
+    const timer = setInterval(refresh, 15000);
+    return () => {
+      controller.abort();
+      clearInterval(timer);
+    };
+  }, [activeTab, sha, endpoint]);
+  async function publish(next, key, editorial) {
+    if (!endpoint || !sha)
+      throw new Error("El catálogo compartido todavía no está conectado.");
+    const response = await fetch(endpoint, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + key,
+      },
+      body: JSON.stringify({ countries: next, sha, editorial }),
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || "No se pudo publicar.");
+    setContent(editorial);
+    setCountries(next);
+    setSha(result.sha);
+  }
 
   const selectCountry = (iso) => {
     const country = countries.find((item) => item.iso === iso);
@@ -1315,7 +1503,7 @@ function App() {
         </a>
         <div className="topbar-meta">
           <i className="status-dot" />
-          <span>Fuentes revisadas hasta 2026</span>
+          <span>Atlas de salud mental</span>
         </div>
         <button
           type="button"
@@ -1349,19 +1537,21 @@ function App() {
               ["comparar", "03", "Comparar países"],
               ["metodologia", "04", "Metodología"],
               ["admin", "05", "Administración"],
-            ].map(([tab, number, label]) => (
-              <button
-                type="button"
-                key={tab}
-                className={`nav-item ${activeTab === tab ? "active" : ""}`}
-                aria-current={activeTab === tab ? "page" : undefined}
-                onClick={() => changeTab(tab)}
-              >
-                <span>{number}</span>
-                {label}
-                <b aria-hidden="true">↗</b>
-              </button>
-            ))}
+            ]
+              .filter(([tab]) => tab !== "admin" || editable)
+              .map(([tab, number, label]) => (
+                <button
+                  type="button"
+                  key={tab}
+                  className={`nav-item ${activeTab === tab ? "active" : ""}`}
+                  aria-current={activeTab === tab ? "page" : undefined}
+                  onClick={() => changeTab(tab)}
+                >
+                  <span>{number}</span>
+                  {label}
+                  <b aria-hidden="true">↗</b>
+                </button>
+              ))}
           </nav>
           <div className="rail-note">
             <span className="rail-note-mark">!</span>
@@ -1384,10 +1574,7 @@ function App() {
                     <br />
                     <em>tiene territorio.</em>
                   </h1>
-                  <p className="hero-deck">
-                    Explora cómo se distribuyen los trastornos más frecuentes y
-                    qué respuestas de salud pública los acompañan.
-                  </p>
+                  <p className="hero-deck">{content.introduction}</p>
                   <button
                     type="button"
                     className="button button-primary"
@@ -1445,21 +1632,9 @@ function App() {
                 aria-label="Señales globales"
                 data-reveal
               >
-                <Metric
-                  value=">1 B"
-                  label="personas viven con un trastorno mental"
-                  note="estimación global OMS"
-                />
-                <Metric
-                  value="77,9%"
-                  label="brecha de tratamiento en América Latina y el Caribe"
-                  note="referencia OPS"
-                />
-                <Metric
-                  value="2,1%"
-                  label="del presupuesto sanitario regional va a salud mental"
-                  note="referencia OPS"
-                />
+                <Metric value={countries.length} label="países en el directorio" note="Catálogo de MentAtlas"/>
+                <Metric value={DISORDER_OPTIONS.length} label="indicadores de salud mental" note="Metodología del atlas"/>
+                <Metric value={countries.filter(c=>safeSourceUrl(c.policy.link)).length} label="fichas con fuente de política pública" note="Enlaces disponibles en Políticas públicas"/>
               </section>
               <section
                 className="content-section explore-section"
@@ -1634,17 +1809,19 @@ function App() {
           )}
           {activeTab === "politicas" && (
             <PolicyView
+              content={content}
               country={policyCountry}
               countries={countries}
               onCountryChange={(id) => setPolicyCountryId(id)}
-              onEdit={() => changeTab("admin")}
+              onEdit={editable ? () => changeTab("admin") : null}
             />
           )}
-          {activeTab === "metodologia" && <MethodView />}
-          {activeTab === "admin" && (
+          {activeTab === "metodologia" && <MethodView content={content} />}
+          {activeTab === "admin" && editable && (
             <AdminView
+              content={content}
               countries={countries}
-              setCountries={setCountries}
+              publish={publish}
               onPolicySaved={onAdminSaved}
             />
           )}

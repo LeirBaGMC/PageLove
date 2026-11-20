@@ -1,0 +1,41 @@
+export const fields = [
+  ["actions", "Qué se hace"],
+  ["how", "Cómo se trabaja"],
+  ["coverage", "Cobertura y acceso"],
+  ["indicators", "Qué se mide"],
+  ["plan", "Plan o marco vigente"],
+];
+export const editorial = {
+  introduction: 'Explora los indicadores de salud mental de cada país y consulta las fuentes que describen su respuesta pública.',
+  shows:
+    "El atlas reúne estimaciones ilustrativas de cinco grupos de trastornos y describe las políticas públicas documentadas de cada país. Para un trabajo académico o institucional, consulta el valor, el año y la población en la fuente original.",
+  limits:
+    "Un porcentaje poblacional no permite diagnosticar a una persona ni estimar su riesgo. Las diferencias entre países pueden reflejar encuestas, definiciones, años o coberturas distintas.",
+  construction:
+    "Las fichas organizan la información por país, trastorno, año, población y fuente. La versión inicial calcula las series por año y grupo mediante factores aplicados a valores de referencia. Esas series son ilustrativas. Las políticas sin documentación nacional quedan pendientes.",
+  community:
+    "La OMS recomienda desarrollar servicios cercanos al lugar donde viven las personas, coordinar la atención sanitaria y social y proteger sus derechos durante la transición desde instituciones de larga estancia.",
+  communityUrl: "https://www.who.int/publications/i/item/9789240124134",
+  references: [
+    [
+      "OMS · Trastornos mentales",
+      "https://www.who.int/news-room/fact-sheets/detail/mental-disorders",
+    ],
+    [
+      "OMS · Atlas de salud mental y perfiles nacionales",
+      "https://www.who.int/teams/mental-health-and-substance-use/data-research/mental-health-atlas",
+    ],
+    [
+      "OPS · Salud mental en las Américas",
+      "https://www.paho.org/es/temas/salud-mental",
+    ],
+    [
+      "Our World in Data · Estimaciones y métodos",
+      "https://ourworldindata.org/mental-health",
+    ],
+    [
+      "MSP Ecuador · Normativa de salud mental",
+      "https://www.salud.gob.ec/normativa-sistema-nacional-de-salud-salud-mental/",
+    ],
+  ],
+};
