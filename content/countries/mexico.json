@@ -8,5 +8,13 @@
     "eating": 0.39,
     "bipolar": 0.84,
     "schizophrenia": 0.34
+  },
+  "policy": {
+    "actions": "Se desarrollan programas de prevención del suicidio, detección y tratamiento de trastornos mentales y adicciones. Se ofrece orientación gratuita mediante la Línea de la Vida (800 911 2000), disponible las 24 horas. ",
+    "how": "Se aplica un modelo comunitario que integra atención primaria, centros especializados y hospitales. La red reportada en 2024 incluía 341 CECOSAMA, 115 hospitales generales con 241 camas habilitadas y 34 hospitales psiquiátricos. ",
+    "coverage": "Sistema de salud segmentado. Sector privado formal accede principalmente al IMSS (Instituto Mexicano del Seguro Social). Empleados públicos afiliados y sus beneficiarios reciben atención mediante el ISSSTE (Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado). Las personas sin seguridad social pueden acceder gratuitamente a servicios públicos, como IMSS-Bienestar en las entidades donde opera, y a los Centros Comunitarios de Salud Mental y Adicciones (CECOSAMA). Persisten desigualdades territoriales, económicas y de disponibilidad de especialistas. ",
+    "indicators": "Se registran principalmente indicadores como la mortalidad por suicidio, desglosada por sexo, edad y entidad federativa. En 2025 se registraron preliminarmente 8.709 suicidios, equivalentes a 6,7 por cada 100.000 habitantes.",
+    "plan": "La Ley General de Salud, reformada en 2022, establece la atención comunitaria y el respeto a los derechos humanos. El Programa Sectorial de Salud 2025–2030 y el Programa Anual de Trabajo de CONASAMA 2026 orientan las estrategias actuales. ",
+    "updated": "CONASAMA - 2024-2026 Secretaria de Salud -2024 INEGI-2026"
   }
 }
