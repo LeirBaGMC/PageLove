@@ -1,8 +1,8 @@
 {
-  "iso": "BR",
   "name": "Brasil",
-  "summary": "La RAPS permite observar la transición desde la institucionalización hacia redes territoriales.",
+  "iso": "BR",
   "region": "latam",
+  "summary": "La RAPS permite observar la transición desde la institucionalización hacia redes territoriales.",
   "values": {
     "depression": 5.1,
     "anxiety": 6.2,
@@ -11,10 +11,13 @@
     "schizophrenia": 0.33
   },
   "policy": {
-    "plan": "Rede de Atenção Psicossocial (RAPS)",
-    "how": "La red articula los servicios del Sistema Único de Saúde, incluidos los centros de atención psicosocial.",
+    "actions": "Brasil desarrolla acciones de promoción, prevención y tratamiento de trastornos mentales y consumo problemático de sustancias. Destacan la atención comunitaria, cuidado en crisis, la prevención del suicidio, la rehabilitación psicosocial y la reinsercion social de las personas con trastornos mentales, principalmente a través del Sistema Único de Salud (SUS) y los Centros de Atención Psicosocial (CAPS). En 2026, el Ministerio de Salud también habilitó teleatención de salud mental a través de Meu SUS Digital.",
+    "how": "La atención se organiza mediante la Red de Atención Psicosocial (RAPS) dentro del SUS, que articula Unidades Básicas de Salud (UBS), equipos de Salud de la Familia, CAPS, servicios residenciales terapéuticos, unidades de acogida, servicios de urgencias y hospitales generales. Se prioriza la atención territorial y comunitaria, procurando evitar hospitalizaciones prolongadas e innecesarias. Los CAPS son servicios comunitarios de puerta abierta: una persona puede acudir directamente o ser derivada desde una UBS; si no corresponde al CAPS, el servicio coordina su atención en otro punto de la red.",
+    "coverage": "Sistema público universal y gratuito, el Sistema Único de Salud (SUS), financiado mediante recursos públicos. Todas las personas, independientemente de sus ingresos, empleo o afiliación, tienen derecho a recibir atención en el SUS, incluidas las personas extranjeras. La atención en salud mental mediante servicios públicos como los CAPS no requiere afiliación laboral. Existen seguros privados complementarios. Persisten desigualdades regionales, listas de espera y diferencias en la disponibilidad de especialistas, cobertura legal no equivale automáticamente a acceso efectivo inmediato.",
+    "indicators": "Se registran indicadores como mortalida y tentativas de suicidio, utilizacion de servicios, infraestructura de la RAPS, hospitalizaciones por trastornos mentales, disponibilidad de profesionales, número de establecimientos especializados y utilización de servicios. Estas estadísticas se recopilan mediante sistemas como DATASUS, el Sistema de Información sobre Mortalidad (SIM), el Registro Nacional de Establecimientos de Salud (CNES) y otros sistemas sanitarios nacionales.",
+    "plan": "La Constitución de 1988 reconoce la salud como derecho universal, mientras que la Ley 8.080/1990 regula el SUS. La Ley 10.216/2001 protege los derechos de las personas con trastornos mentales y orienta la atención hacia servicios comunitarios. La RAPS fue instituida mediante la Ordenanza 3.088/2011, posteriormente incorporada al marco normativo consolidado. El Plan Nacional de Salud 2024–2027 constituye un instrumento general de planificación sanitaria.",
+    "updated": "Información normativa de 1988–2011 y planificación sanitaria de 2024–2027. Ministerio de Salud de Brasil, Gobierno Federal de Brasil, DATASUS y Agencia Nacional de Salud Suplementaria (ANS) 2023-2026",
     "source": "Ministério da Saúde · RAPS",
     "link": "https://www.gov.br/saude/pt-br/composicao/saes/desmad/raps"
-  },
-  "observations": []
+  }
 }
