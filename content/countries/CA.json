@@ -1,8 +1,8 @@
 {
-  "iso": "CA",
   "name": "Canadá",
-  "summary": "El sistema público convive con brechas de oportunidad y una agenda comunitaria.",
+  "iso": "CA",
   "region": "northamerica",
+  "summary": "El sistema público convive con brechas de oportunidad y una agenda comunitaria.",
   "values": {
     "depression": 5.5,
     "anxiety": 7.1,
@@ -10,6 +10,12 @@
     "bipolar": 0.9,
     "schizophrenia": 0.34
   },
-  "policy": {},
-  "observations": []
+  "policy": {
+    "actions": "Los objetivos de la Comisión de Salud Mental de Canadá, una organización creada por el Gobierno de Canadá, independiente y sin fines de lucro, son crear estándares de calidad, impulsar la formación en Primeros Auxilios en Salud Mental, tomar iniciativas en la prevención comunitaria, promover la atención en plataformas digitales, disminuir la brecha para grupos vulnerables y recopilar datos para evaluación e investigación.",
+    "how": "En Canadá existen 13 leyes de salud mental, ya que las diez provincias y los tres territorios son responsables de sus propias leyes y servicios de salud. Si bien las leyes canadienses de salud mental comparten similitudes fundamentales, existen diferencias clínicamente significativas. La Comisión de Salud Mental de Canadá impulsa y facilita cambios en el sistema de salud, identifica problemas de brecha, como la falta de atención psicológica en zonas rurales, entrega guías y proyectos e incita a la capacitación de gente local. Reconoce los problemas clave y mide el alcance general de los servicios de salud en la población.",
+    "coverage": "Sistema mixto, enfocándonos en el sistema de salud mental, dentro del país existen varios servicios cubiertos por el Estado, como atención psiquiátrica, organizaciones de salud mental sin fines de lucro, apoyo de trabajadores sociales e incluso, programas para comunidades específicas, siendo cualquier ciudadano elegible independientemente de su seguro social. Por otra parte, existen servicios no cubiertos que se transfieren al ámbito privado como los medicamentos o psicoterapia.",
+    "indicators": "Brecha de atención dentro del sistema de salud, tiempos de espera, reducción del estigma, indicadores clínicos, tasas de suicidios, reingresos hospitalarios, número de personas capacitadas en primeros auxilios psicológicos, voluntarios, leyes, presupuesto y planes provinciales o federales.",
+    "plan": "Plan Estratégico 2021–2031 de la Comisión de Salud Mental de Canadá (MHCC)\nTiene como objetivos principales la investigación para impulsar los identificadores de riesgo para evaluar salud mental y mejorar los servicios. Busca reducir el estigma y la discriminación, promoviendo la salud física y mental y, asimismo, reducir las desigualdades en el acceso de los servicios. Esto último incluye a las comunidades indígenas.\n",
+    "updated": "Asociación Médica Canadiense - 2026 Libreria Nacional de Medicina - PubMed  2014 Comisión de Salud Mental de Canadá - 2021"
+  }
 }
