@@ -1,8 +1,8 @@
 {
-  "iso": "AR",
   "name": "Argentina",
-  "summary": "La política nacional pone el foco en derechos, comunidad y sustitución progresiva del modelo asilar.",
+  "iso": "AR",
   "region": "latam",
+  "summary": "La política nacional pone el foco en derechos, comunidad y sustitución progresiva del modelo asilar.",
   "values": {
     "depression": 4.7,
     "anxiety": 5.9,
@@ -10,6 +10,12 @@
     "bipolar": 0.7,
     "schizophrenia": 0.31
   },
-  "policy": {},
-  "observations": []
+  "policy": {
+    "actions": "Se trabaja en la promoción de la salud mental, la prevención de los padecimientos, la atención de trastornos mentales y consumos problemáticos, la rehabilitación y la inclusión social. Se busca reemplazar progresivamente el modelo centrado en internaciones psiquiátricas prolongadas por una atención comunitaria, respetuosa de los derechos humanos.\n",
+    "how": "Argentina tiene un sistema de salud federal y descentralizado. La atención se organiza mediante hospitales generales, centros de atención primaria y dispositivos comunitarios, con derivación a servicios especializados cuando es necesario. La atención debe ser interdisciplinaria, con participación de profesionales de distintas áreas y articulación entre los servicios de salud y otros sectores.",
+    "coverage": "Argentina cuenta con un sistema mixto compuesto por tres subsistemas: público, seguridad social y privado. El sector público ofrece atención gratuita a toda la población; las obras sociales brindan cobertura principalmente a trabajadores afiliados y sus familias, mientras que las empresas de medicina prepaga ofrecen planes voluntarios. Las obras sociales y prepagas deben incluir prestaciones de salud mental dentro de la cobertura obligatoria.",
+    "indicators": "Se utilizan indicadores y metas para evaluar el avance de los nueve ejes del Plan Nacional. Entre ellos se consideran el fortalecimiento de la atención primaria, la ampliación de la red de servicios, la atención en hospitales generales, la reducción progresiva de internaciones en instituciones monovalentes, la promoción y prevención, y la vigilancia epidemiológica. Como dato concreto, durante 2024 el Dispositivo Nacional de Orientación y Apoyo en Urgencias de Salud Mental registró 18.787 consultas, con un promedio de 1.565 llamadas mensuales. Esta cifra corresponde a ese dispositivo, no al total nacional de atenciones.",
+    "plan": "El plan nacional vigente dentro de su período establecido es el Plan Nacional de Salud Mental 2023–2027. Este establece nueve ejes de trabajo para fortalecer la atención comunitaria, la prevención, la atención primaria y la integración de la red de servicios.",
+    "updated": "Ministerio de Salud – 2023 Poder Ejecutivo Nacional – 2013 Ministerio de Salud – 2024 Superintendencia de Servicios de Salud – 2023"
+  }
 }
