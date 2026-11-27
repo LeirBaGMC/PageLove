@@ -1,8 +1,8 @@
 {
-  "iso": "CN",
   "name": "China",
-  "summary": "La expansión de servicios y la integración en primer nivel avanzan por regiones.",
+  "iso": "CN",
   "region": "asia",
+  "summary": "La expansión de servicios y la integración en primer nivel avanzan por regiones.",
   "values": {
     "depression": 3.8,
     "anxiety": 4.8,
@@ -10,6 +10,12 @@
     "bipolar": 0.55,
     "schizophrenia": 0.27
   },
-  "policy": {},
-  "observations": []
+  "policy": {
+    "actions": "Se desarrollan programas de promoción, prevención, detección, diagnóstico y tratamiento. Destaca en especial la atención relacionada con ansiedad y depresión, la prevención de crisis, educación sobre salud mental y el desarrollo de los servicios comunitarios. Se recalca que cuentan con una línea nacional de asistencia psicológica (12356), para brindar apoyo, orientación e intervención en crisis.\n",
+    "how": "La atención se da mediante un sistema de salud público con seguro médico básico, con participación tanto de instituciones públicas como de privadas. Los servicios se conforman de hospitales psiquiátricos, departamentos de psiquiatría en hospitales generales y centros de salud comunitarios. La atención primario permite identificar y realizar seguimiento de personas con trastornos mentales, mientras que los hospitales especializados proporcionan diagnóstico y tratamiento.",
+    "coverage": "Su sistema se basa en el seguro médico básico, el cual tiene 2 modalidades: el seguro médico para trabajadores urbanos y el de residentes. Ambos reciben financiamiento mediante contribuciones y, en el caso del seguro de residentes, subsidios del gobierno. Según datos de la NHC, a finales del 2025, la cobertura del seguro médico básico alcanzó aproximadamente a un 95 % de la población. Los servicios de salud mental se ofrecen en instituciones tanto públicas como especializadas e incluso existen programas de ayuda médica para poblaciones vulnerables.",
+    "indicators": "Se tienen datos del número de personas registradas con trastornos mentales graves, la cobertura de seguimiento, regularidad de tratamiento farmacológico y estabilidad clínica. También se evalúa la disponibilidad de servicios especializados y la utilización de la línea de ayuda.\nDe hecho, en diciembre de 2025, la Comisión Nacional de Salud de China informó que la línea (12356) había atendido más de 700 mil llamadas y facilitado alrededor de 10 mil intervenciones en situaciones de crisis.\n",
+    "plan": "La Ley de Salud Mental de la República Popular China , todavía vigente desde 2013, establece bases legales para la prevención, tratamiento y rehabilitación de los trastornos mentales, así como el respaldo para la protección de los derechos de los pacientes.\nTambién destaca el Plan para el fortalecimiento del sistema de servicios psicológicos sociales y los mecanismos de intervención en crisis (2026-2030), cuyo objetivo es ampliar los servicios psicológicos comunitarios, fortalecer la atención en instituciones educativas y garantizar servicios de atención psicológica en hospitales y centros de salud. Igualmente, está vigente la iniciativa Años de Servicios Pediátricos y de Salud Mental (2025-2027), orientada a ampliar la disponibilidad de servicios especializados.\n",
+    "updated": "Comisión Nacional de Salud de China (NHC) - 2012, actualizada en 2013, NHC: Estadísticas de seguro médico- 2024, NHC: Actualización de Servicios de salud mental y línea 12356- 2025, NHC: Plan de servicios pediátricos y salud mental   - 2025, NHC: Plan de servicios psicológicos sociales - 2026"
+  }
 }
