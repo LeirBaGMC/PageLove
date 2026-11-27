@@ -9,5 +9,12 @@
     "eating": 0.44,
     "bipolar": 0.56,
     "schizophrenia": 0.31
+  },
+  "policy": {
+    "actions": "Se desarrollan programas de promoción, prevención, detección y tratamiento de trastornos mentales. Destacan las acciones de prevención del suicidio, atención de problemas como depresión y ansiedad, promoción del bienestar psicológico y fortalecimiento de los servicios psicoterapéuticos. También se realizan campañas de sensibilización y educación sobre salud mental. ",
+    "how": "La atención se organiza mediante el modelo Bismarckiano, basado en un sistema de seguro social obligatorio financiado principalmente por las contribuciones de trabajadores y empleadores. Integra médicos generales, psiquiatras, psicoterapeutas y hospitales especializados. Los centros de atención primaria permiten identificar problemas y derivar a especialistas, mientras que los servicios ambulatorios y hospitalarios ofrecen tratamiento y seguimiento. Su organización es descentralizada y combina seguros públicos y privados. ",
+    "coverage": "Consta de un sistema compuesto principalmente por el seguro médico público y privado. El público cubre servicios médicos, psiquiátricos y psicoterapias, mientras que el privado depende de las condiciones de cada seguro. Existen ciertas dificultades con los periodos de espera y disponibilidad de profesionales.",
+    "indicators": "Se monitorean indicadores como la prevalencia de síntomas depresivos y de ansiedad, los diagnósticos de trastornos mentales, el bienestar psicológico y las tasas de suicidio. El Instituto Robert Koch (RKI) desarrolla el sistema Mental Health Surveillance, que permite recopilar y analizar información sobre la salud mental de la población. \n",
+    "plan": "Destaca la Ley de Prevención (Präventionsgesetz), desde el 2015, todavía vigente hasta el año actual y establece acciones de prevención y promoción en diversos entornos sociales."
   }
 }
