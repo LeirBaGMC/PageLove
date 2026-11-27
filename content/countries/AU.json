@@ -1,8 +1,8 @@
 {
-  "iso": "AU",
   "name": "Australia",
-  "summary": "La tele salud mental y la adaptación cultural ayudan a cubrir territorios remotos.",
+  "iso": "AU",
   "region": "oceania",
+  "summary": "La tele salud mental y la adaptación cultural ayudan a cubrir territorios remotos.",
   "values": {
     "depression": 5,
     "anxiety": 6.7,
@@ -10,6 +10,12 @@
     "bipolar": 0.9,
     "schizophrenia": 0.33
   },
-  "policy": {},
-  "observations": []
+  "policy": {
+    "actions": "Desarrolla programas de promoción del bienestar psicológico, prevención del suicidio, detección temprana, tratamiento y recuperación de personas con trastornos mentales. Se atienden problemas como depresión, ansiedad, trastornos mentales graves, consumo problemático de sustancias y dificultades emocionales en niños, adolescentes y adultos. Destacan las iniciativas nacionales de prevención del suicidio, los servicios comunitarios de apoyo psicológico, el programa headspace para jóvenes y los mecanismos de acceso a terapias mediante Medicare. También existen actuaciones dirigidas a poblaciones vulnerables, comunidades rurales y remotas, y pueblos aborígenes e isleños del Estrecho de Torres.",
+    "how": "La atención se organiza mediante un sistema mixto, coordinado entre el Gobierno federal, los gobiernos estatales y territoriales, hospitales públicos, profesionales privados y organizaciones comunitarias. Los médicos generales suelen realizar la evaluación inicial y derivar a psicólogos, psiquiatras u otros especialistas. Las Redes de Atención Primaria (Primary Health Networks, PHN) identifican necesidades territoriales y coordinan financiamiento para determinados servicios comunitarios, incluidos programas de intervención psicológica de baja intensidad. Los hospitales y equipos especializados atienden los casos de mayor complejidad. El modelo combina atención presencial, telesalud, intervención temprana, apoyo en crisis y programas de recuperación psicosocial.",
+    "coverage": "Cuenta con un sistema sanitario de cobertura universal denominado Medicare, financiado principalmente mediante impuestos, que cubre a ciudadanos australianos y otras personas elegibles, como residentes permanentes y determinados residentes extranjeros. El acceso no depende exclusivamente de tener empleo formal ni de pertenecer a un estrato económico. Medicare financia atención médica y determinadas prestaciones psicológicas y psiquiátricas, aunque algunos servicios requieren copagos o generan gastos adicionales. Los hospitales públicos proporcionan atención cubierta a los pacientes elegibles. Existen seguros privados complementarios y servicios públicos o comunitarios gratuitos dirigidos a grupos específicos. Las principales dificultades incluyen listas de espera, costos de algunas terapias, distribución desigual de especialistas y barreras de acceso en comunidades rurales, remotas e indígenas.",
+    "indicators": "Se registran indicadores como la prevalencia de trastornos mentales, las tasas de suicidio, las lesiones autoinfligidas, las hospitalizaciones por problemas de salud mental, las consultas psicológicas y psiquiátricas, el uso de medicamentos y los gastos sanitarios. También se analiza la utilización de servicios públicos y privados, la demanda asistencial y las desigualdades de acceso entre territorios y grupos de población. El Instituto Australiano de Salud y Bienestar (AIHW) recopila información sobre servicios de salud mental, suicidio y autolesiones, mientras que la Oficina Australiana de Estadísticas (ABS) publica datos sobre mortalidad y causas de muerte.",
+    "plan": "Se encuentran la Estrategia Nacional de Prevención del Suicidio, el Acuerdo Nacional de Salud Mental y Prevención del Suicidio y la Estrategia Nacional de Fuerza Laboral de Salud Mental 2022–2032. Durante 2026 continuaron las iniciativas de fortalecimiento de servicios comunitarios, apoyo psicológico en atención primaria y prevención del suicidio. También se contemplan estrategias específicas para pueblos aborígenes e isleños del Estrecho de Torres, niños, jóvenes y otras poblaciones prioritarias.",
+    "updated": "Departamento de Salud, Discapacidad y Envejecimiento - 2026  Instituto Australiano de Salud y Bienestar (AIHW) - 2026 Oficina Australiana de Estadísticas (ABS) - 2025"
+  }
 }
