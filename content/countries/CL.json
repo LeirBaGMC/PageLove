@@ -1,8 +1,8 @@
 {
-  "iso": "CL",
   "name": "Chile",
-  "summary": "La expansión de servicios en atención primaria convive con brechas de especialistas y continuidad.",
+  "iso": "CL",
   "region": "latam",
+  "summary": "La expansión de servicios en atención primaria convive con brechas de especialistas y continuidad.",
   "values": {
     "depression": 5.2,
     "anxiety": 6.8,
@@ -10,6 +10,12 @@
     "bipolar": 0.75,
     "schizophrenia": 0.34
   },
-  "policy": {},
-  "observations": []
+  "policy": {
+    "actions": "Se desarrolla programas de promoción, prevención, diagnóstico y tratamiento de trastornos mentales, con énfasis en la prevención del suicidio, la atención de la depresión, las adicciones y el fortalecimiento de la salud mental comunitaria. Dispone de la línea gratuita *4141 para la prevención del suicidio y promueve estrategias de acompañamiento psicológico, intervención temprana y reducción del estigma.",
+    "how": "La atención se organiza mediante la red pública de salud, integrando la Atención Primaria de Salud (APS), los Centros de Salud Familiar (CESFAM), los Centros Comunitarios de Salud Mental (COSAM) y los hospitales. Se utiliza un enfoque comunitario, interdisciplinario y de continuidad de cuidados, que busca detectar tempranamente los problemas de salud mental y derivar a servicios especializados cuando es necesario.",
+    "coverage": "Posee un sistema de salud mixto y segmentado, compuesto principalmente por el seguro público FONASA (Fondo Nacional de Salud) y los seguros privados ISAPRE (Institución de Salud Previsional). FONASA cubre a trabajadores afiliados, pensionados, sus cargas familiares y personas sin ingresos que cumplen los requisitos de incorporación, sus beneficiarios tienen atención gratuita en la red pública bajo la modalidad institucional (Copago Cero). Las ISAPRE ofrecen cobertura según el plan contratado y sus condiciones. \nLos servicios públicos de salud mental están integrados en la APS y la red especializada, mientras que algunas condiciones psiquiátricas cuentan con garantías GES (Garantías Explícitas en Salud). Aunque se impulsa la Atención Primaria Universal, su implementación es progresiva y no significa que toda la población tenga automáticamente la misma cobertura. Persisten diferencias territoriales, listas de espera y dificultades para acceder a especialistas.\n",
+    "indicators": "Se consideran indicadores como las tasas de suicidio, las atenciones y controles de salud mental, el número de personas en tratamiento, las prestaciones realizadas y la disponibilidad de establecimientos y profesionales. También se monitorea el funcionamiento de la línea *4141 y el desarrollo de la infraestructura sanitaria mediante los registros del Ministerio de Salud (MINSAL).",
+    "plan": "La Ley 21.331 de 2021 reconoce y protege los derechos de las personas en la atención de salud mental. El Plan Nacional de Salud Mental 2017–2025 y el Plan de Acción 2019–2025 constituyen antecedentes de planificación cuyos períodos ya finalizaron. Para 2026, el Ministerio de Salud presenta líneas estratégicas en su Eje Salud Mental y orientaciones técnicas para el fortalecimiento de la atención primaria y especializada.",
+    "updated": "MINSAL (2026), Cuenta Pública Sectorial 2026, Plan Nacional de Salud Mental (2017-2025)"
+  }
 }
