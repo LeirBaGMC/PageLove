@@ -1,8 +1,8 @@
 {
-  "iso": "CO",
   "name": "Colombia",
-  "summary": "El mapa sitúa la salud mental en un sistema con énfasis creciente en atención primaria y territorio.",
+  "iso": "CO",
   "region": "latam",
+  "summary": "El mapa sitúa la salud mental en un sistema con énfasis creciente en atención primaria y territorio.",
   "values": {
     "depression": 4.9,
     "anxiety": 6.5,
@@ -11,11 +11,13 @@
     "schizophrenia": 0.32
   },
   "policy": {
+    "actions": "Se desarrollan acciones de promoción de la salud mental, prevención de trastornos, detección temprana, atención integral, rehabilitación e inclusión social. También se trabaja en la prevención del consumo problemático de sustancias y la reducción del estigma y la discriminación.",
+    "how": "Se aplica un enfoque comunitario e interdisciplinario, con énfasis en la Atención Primaria en Salud. La atención se articula entre centros de salud, hospitales, redes comunitarias y otros sectores, como educación y protección social. Se busca acercar los servicios a las comunidades y garantizar continuidad en la atención.",
+    "coverage": "Colombia cuenta con un Sistema General de Seguridad Social en Salud, con afiliación mediante dos regímenes: contributivo y subsidiado. Ambos contemplan la atención en salud mental dentro de los servicios cubiertos. La atención se presta a través de las EPS y sus redes de instituciones públicas y privadas; el acceso efectivo puede variar según el territorio y la disponibilidad de profesionales y servicios.",
+    "indicators": "Se registran las consultas y atenciones por problemas y trastornos mentales, los diagnósticos, las hospitalizaciones y la atención relacionada con el consumo de sustancias psicoactivas. También se evalúan indicadores de acceso, continuidad de los tratamientos y distribución territorial de los servicios. Por ejemplo, en 2024 se registraron 20.512 atenciones en salud mental a 4.092 personas víctimas del conflicto armado, según datos de PAPSIVI (Programa de Atención Psicosocial y Salud Integral a Víctimas del conflicto armado en Colombia) y SISPRO (Sistema Integral de Información de la Protección Social).",
     "plan": "Política Nacional de Salud Mental · Decreto 0729 de 2025",
-    "actions": "El decreto adopta la política nacional y establece el marco de la respuesta pública.",
+    "updated": "2025",
     "source": "Ministerio de Salud y Protección Social",
-    "link": "https://www.minsalud.gov.co/Normatividad_Nuevo/DECRETO%200729%20DEL%2025%20DE%20JUNIO%20DE%202025.pdf",
-    "updated": "2025"
-  },
-  "observations": []
+    "link": "https://www.minsalud.gov.co/Normatividad_Nuevo/DECRETO%200729%20DEL%2025%20DE%20JUNIO%20DE%202025.pdf"
+  }
 }
