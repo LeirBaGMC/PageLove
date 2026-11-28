@@ -1,8 +1,8 @@
 {
-  "iso": "ES",
   "name": "España",
-  "summary": "La cobertura pública amplia se cruza con presión sobre acceso, espera y salud juvenil.",
+  "iso": "ES",
   "region": "europe",
+  "summary": "La cobertura pública amplia se cruza con presión sobre acceso, espera y salud juvenil.",
   "values": {
     "depression": 4.5,
     "anxiety": 6,
@@ -11,11 +11,13 @@
     "schizophrenia": 0.31
   },
   "policy": {
-    "plan": "Plan de Acción de Salud Mental 2025–2027",
-    "actions": "El plan establece las acciones del Sistema Nacional de Salud para el periodo 2025–2027.",
+    "actions": "Programas de promoción, prevención, diagnóstico y tratamiento de trastornos mentales, priorizando la prevención del suicidio, la atención de la depresión y la ansiedad, el bienestar emocional y la reducción del estigma. Destacan la Estrategia de Salud Mental del Sistema Nacional de Salud (SNS) y la Línea 024, un servicio gratuito y confidencial de atención a personas con riesgo de conducta suicida y sus familiares, disponible las 24 horas.",
+    "how": "La atención se organiza mediante el Sistema Nacional de Salud (SNS), coordinado entre el Ministerio de Sanidad y las comunidades autónomas. Integra centros de atención primaria, unidades de salud mental, hospitales y servicios comunitarios. Se priorizan la detección temprana, el tratamiento interdisciplinario, la continuidad de cuidados y la derivación a especialistas. Las estrategias nacionales promueven la coordinación entre los ámbitos sanitario, educativo y social.",
+    "coverage": "Cuenta con un sistema sanitario público de cobertura prácticamente universal, financiado principalmente mediante impuestos y basado fundamentalmente en la residencia y el reconocimiento del derecho a la asistencia sanitaria, no exclusivamente en la ciudadanía o afiliación laboral. Las personas con derecho a la atención del SNS pueden acceder a servicios públicos de salud mental sin pagar por las consultas cubiertas. También existen seguros privados voluntarios y regímenes especiales para determinados empleados públicos. Aunque la cobertura es amplia, persisten barreras como listas de espera, diferencias entre comunidades autónomas y disponibilidad desigual de profesionales de psicología clínica y psiquiatría.",
+    "indicators": "Se registran indicadores como la mortalidad por suicidio, la prevalencia de problemas de salud mental, las consultas y hospitalizaciones, la disponibilidad de profesionales y la utilización de servicios. También se monitorea el funcionamiento de la Línea 024 (Servicio público, gratuito y confidencial de atención a la conducta suicida, promovido por el Ministerio de Sanidad bajo el lema «Llama a la vida». Funciona las 24 horas del día, los 365 días del año, y es gestionado por Cruz Roja) mediante informes periódicos de atención.",
+    "plan": "El Plan de Acción de Salud Mental 2025–2027 desarrolla medidas para fortalecer los servicios, la equidad y los derechos de las personas con problemas de salud mental. También se contempla el Plan de Acción para la Prevención del Suicidio. La Ley 16/2003 de cohesión y calidad del SNS constituye parte del marco normativo general.",
+    "updated": "2025",
     "source": "Ministerio de Sanidad de España",
-    "link": "https://www.sanidad.gob.es/areas/calidadAsistencial/estrategias/saludMental/docs/Plan_accion_salud_mental_2025_27.pdf",
-    "updated": "2025"
-  },
-  "observations": []
+    "link": "https://www.sanidad.gob.es/areas/calidadAsistencial/estrategias/saludMental/docs/Plan_accion_salud_mental_2025_27.pdf"
+  }
 }
