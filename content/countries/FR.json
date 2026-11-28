@@ -1,8 +1,8 @@
 {
-  "iso": "FR",
   "name": "Francia",
-  "summary": "La política combina cobertura pública, atención ambulatoria y prevención.",
+  "iso": "FR",
   "region": "europe",
+  "summary": "La política combina cobertura pública, atención ambulatoria y prevención.",
   "values": {
     "depression": 4.4,
     "anxiety": 6.2,
@@ -10,6 +10,11 @@
     "bipolar": 0.78,
     "schizophrenia": 0.31
   },
-  "policy": {},
-  "observations": []
+  "policy": {
+    "actions": "Programas de promoción, prevención, diagnóstico y tratamiento de trastornos mentales, priorizando la prevención del suicidio, la atención de la depresión y la ansiedad, el acceso a servicios psiquiátricos y la reducción del estigma. Destacan la Estrategia Nacional de Prevención del Suicidio, el servicio gratuito de prevención del suicidio 3114 y el programa Mon soutien psy, que facilita el acceso a sesiones de acompañamiento psicológico bajo determinadas condiciones. Durante 2025–2026, el Ministerio de Salud presentó medidas para fortalecer la atención psiquiátrica y la detección temprana.",
+    "how": "La atención se organiza mediante la red sanitaria pública y privada, articulando médicos generales, hospitales, servicios psiquiátricos y Centros Médico-Psicológicos (CMP). Se utiliza un modelo territorial de atención psiquiátrica que busca proporcionar seguimiento comunitario y continuidad de cuidados. Las Agencias Regionales de Salud (ARS) participan en la organización de los servicios. Las políticas recientes promueven la prevención, la coordinación entre profesionales y el fortalecimiento de la psiquiatría de proximidad.",
+    "coverage": "Cuenta con un sistema sanitario de cobertura universal basado principalmente en la residencia legal y estable o en el ejercicio de una actividad laboral, no exclusivamente en la ciudadanía. La Protección Universal de Enfermedad (PUMa) permite acceder al aseguramiento público de salud (Assurance Maladie). Los servicios de salud mental incluyen consultas médicas, atención psiquiátrica y determinados tratamientos psicológicos, sujetos a las reglas de cobertura y reembolso. Las personas de bajos ingresos pueden acceder a ayudas como la Complémentaire santé solidaire (CSS). También existen seguros complementarios privados. Aunque la cobertura es amplia, persisten barreras relacionadas con copagos, disponibilidad de especialistas y desigualdades territoriales.",
+    "indicators": "Se monitorean indicadores como las tasas de suicidio, los intentos de suicidio, las hospitalizaciones psiquiátricas, la utilización de servicios de salud mental y la disponibilidad de profesionales. También se evalúan las actividades de prevención y el funcionamiento de los dispositivos de apoyo. Las publicaciones ministeriales de 2025–2026 presentan información sobre la prevención del suicidio y el fortalecimiento de la atención psiquiátrica.",
+    "plan": "Entre los documentos recientes destacan «Salud mental y psiquiatría: detectar, tratar, reconstruir», publicado en junio de 2025, y la actualización de la Estrategia Nacional de Prevención del Suicidio de febrero de 2026. También se anunciaron medidas para fortalecer la atención psiquiátrica comunitaria y la organización de los servicios durante 2026."
+  }
 }
