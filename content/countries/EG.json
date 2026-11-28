@@ -1,8 +1,8 @@
 {
-  "iso": "EG",
   "name": "Egipto",
-  "summary": "La atención especializada se combina con esfuerzos de integración comunitaria.",
+  "iso": "EG",
   "region": "africa",
+  "summary": "La atención especializada se combina con esfuerzos de integración comunitaria.",
   "values": {
     "depression": 4.1,
     "anxiety": 5.3,
@@ -10,6 +10,12 @@
     "bipolar": 0.52,
     "schizophrenia": 0.28
   },
-  "policy": {},
-  "observations": []
+  "policy": {
+    "actions": "Se desarrollan programas de prevención, detección temprana, atención psicológica y tratamiento de trastornos mentales y adicciones. También se han impulsado servicios de telepsicología y campañas para reducir el estigma.",
+    "how": "La atención se organiza mediante hospitales psiquiátricos, clínicas ambulatorias y servicios de salud mental integrados progresivamente en la atención primaria. En 2026, el Ministerio de Salud informó que el país contaba con 24 centros especializados. También dispone de una plataforma nacional de atención psicológica en línea.",
+    "coverage": "Existen servicios públicos y atención psicológica gratuita en línea. Sin embargo, persisten dificultades por la concentración de recursos en hospitales especializados, la escasez de profesionales y el estigma social, especialmente en zonas rurales.",
+    "indicators": "Se registran consultas, diagnósticos y utilización de servicios. Una encuesta nacional realizada en 2017 estimó que aproximadamente el 17 % de la población presentaba algún trastorno mental. Pero se debe tomar en cuenta la antigüedad del dato y la falta de actualizaciones.",
+    "plan": "La Estrategia Nacional de Salud 2024–2030 incluye el fortalecimiento de la salud mental, la ampliación de servicios en atención primaria, la formación de profesionales y la incorporación de estos servicios al sistema de seguro de salud universal. También contempla ampliar la atención digital y los servicios dirigidos a niños, adolescentes y adultos mayores.",
+    "updated": "Ministerio de Salud y Población de Egipto – 2024 Ministerio de Salud y Población de Egipto – 2026 Organización Mundial de la Salud – 2022 Organización Mundial de la Salud – 2024 "
+  }
 }
