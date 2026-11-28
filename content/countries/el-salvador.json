@@ -8,5 +8,12 @@
     "eating": 0.3,
     "bipolar": 0.74,
     "schizophrenia": 0.32
+  },
+  "policy": {
+    "actions": "Se desarrollan acciones de promoción, prevención, detección, tratamiento y rehabilitación de problemas de salud mental. Se abordan principalmente trastornos como la depresión y la ansiedad, el consumo de sustancias y la atención psicológica en situaciones de crisis. También se fomenta la salud mental en los ámbitos familiar, educativo y comunitario.",
+    "how": "La atención se organiza mediante el Sistema Nacional Integrado de Salud, con un enfoque de Atención Primaria de Salud Integral. Los servicios de primer nivel realizan actividades de prevención, detección y atención inicial; los casos que requieren atención especializada se derivan a hospitales. También existen unidades de salud mental y centros de atención psicosocial.",
+    "coverage": "Cuenta con un sistema mixto: servicios públicos, seguridad social y atención privada. El Ministerio de Salud ofrece atención gratuita en los establecimientos públicos, mientras que el Instituto Salvadoreño del Seguro Social (ISSS) atiende a trabajadores afiliados y sus beneficiarios.",
+    "indicators": "Se registran las consultas y atenciones psicológicas, las intervenciones en crisis y otros servicios de salud mental. Según la Memoria de Labores del MINSAL 2023–2024, entre junio de 2023 y mayo de 2024 se registraron 287401 consultas de salud mental y 88021 atenciones adicionales, que incluyeron primeros auxilios psicológicos, psicoterapia e intervenciones en crisis.",
+    "plan": "El principal marco normativo es la Ley de Salud Mental (2017), que establece y garantiza el derecho a la promoción, prevención, atención y rehabilitación de la salud mental. Además, establece la responsabilidad del Ministerio de Salud de coordinar y regular los servicios, promueve la detección temprana y la atención integral y comunitaria, y protege los derechos de las personas con problemas de salud mental. Se encuentra registrada como vigente y no establece una fecha de caducidad."
   }
 }
