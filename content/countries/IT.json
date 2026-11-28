@@ -1,8 +1,8 @@
 {
-  "iso": "IT",
   "name": "Italia",
-  "summary": "La reforma comunitaria y la coordinación local son piezas centrales.",
+  "iso": "IT",
   "region": "europe",
+  "summary": "La reforma comunitaria y la coordinación local son piezas centrales.",
   "values": {
     "depression": 4.1,
     "anxiety": 5.7,
@@ -10,6 +10,11 @@
     "bipolar": 0.74,
     "schizophrenia": 0.3
   },
-  "policy": {},
-  "observations": []
+  "policy": {
+    "actions": "Desarrolla programas de promoción, prevención, diagnóstico, tratamiento y rehabilitación de trastornos mentales, con énfasis en la atención comunitaria, la prevención del suicidio, la depresión, la ansiedad y el bienestar psicológico de niños, adolescentes y adultos. Destacan las iniciativas de prevención, el fortalecimiento de los servicios psiquiátricos territoriales y la integración social de personas con trastornos mentales, evitando la institucionalización prolongada.",
+    "how": "Se organiza mediante el Servicio Sanitario Nacional (SSN) y los Departamentos de Salud Mental (DSM), que coordinan los Centros de Salud Mental (CSM), hospitales, servicios residenciales y equipos comunitarios. Se prioriza un modelo territorial e interdisciplinario, donde psicólogos, psiquiatras y otros profesionales trabajan en la detección temprana, el tratamiento ambulatorio, la rehabilitación psicosocial y el seguimiento de los pacientes. Las regiones gestionan los servicios, lo que genera diferencias en su disponibilidad.",
+    "coverage": "Cuenta con un sistema sanitario público de cobertura universal, el Servicio Sanitario Nacional (SSN), financiado principalmente mediante impuestos. Los ciudadanos y residentes extranjeros que cumplen los requisitos legales pueden acceder a servicios públicos de salud mental sin depender exclusivamente de su empleo o nivel económico. La atención se organiza territorialmente mediante centros comunitarios, hospitales y servicios especializados. Algunas prestaciones son gratuitas, mientras que otras pueden requerir copagos (ticket), sujetos a exoneraciones. Las personas extranjeras sin residencia regular tienen acceso a determinadas prestaciones urgentes bajo condiciones específicas. Persisten desigualdades regionales, listas de espera y dificultades para acceder a profesionales especializados.",
+    "indicators": "Se registran estadísticas de personas atendidas por trastornos mentales, consultas psiquiátricas, hospitalizaciones, utilización de medicamentos, recursos humanos y disponibilidad de servicios especializados. El Sistema Informativo para la Salud Mental (SISM) recopila información sobre la atención y los establecimientos. Entre las referencias recientes se encuentra el Informe de Salud Mental 2024, publicado en 2026. El Instituto Nacional de Estadística (ISTAT) también proporciona información sobre salud y causas de muerte, incluidos los suicidios.",
+    "plan": "La Ley 180 de 1978, conocida como Ley Basaglia, impulsó la transformación de la atención psiquiátrica hacia un modelo comunitario y la superación de los hospitales psiquiátricos tradicionales. La Ley 833/1978 estableció el Servicio Sanitario Nacional. se encuentra el Plan de Acciones Nacional para la Salud Mental (PANSM) 2025–2030, orientado al fortalecimiento de los servicios y la prevención. También figuran el Plan Nacional de Prevención 2026–2031, la Directiva de primer nivel 2026 y el documento de orientación ministerial (Atto di indirizzo) de 2026."
+  }
 }
