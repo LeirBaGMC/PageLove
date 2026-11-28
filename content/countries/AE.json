@@ -1,8 +1,8 @@
 {
-  "iso": "AE",
   "name": "Emiratos Árabes Unidos",
-  "summary": "La estrategia prioriza prevención, servicios digitales y atención especializada.",
+  "iso": "AE",
   "region": "asia",
+  "summary": "La estrategia prioriza prevención, servicios digitales y atención especializada.",
   "values": {
     "depression": 3.6,
     "anxiety": 4.5,
@@ -10,6 +10,11 @@
     "bipolar": 0.53,
     "schizophrenia": 0.27
   },
-  "policy": {},
-  "observations": []
+  "policy": {
+    "actions": "Se desarrollan acciones de promoción del bienestar psicológico, prevención de trastornos mentales, detección temprana, tratamiento y rehabilitación. También se busca reducir el estigma, proteger los derechos de los pacientes y mejorar la atención de niños, adolescentes y adultos.",
+    "how": "La atención combina servicios de atención primaria, consultas ambulatorias y hospitales especializados. Se busca trasladar progresivamente la atención desde instituciones psiquiátricas de larga estancia hacia servicios comunitarios y centros de salud generales. Cada emirato tiene autoridades sanitarias responsables de organizar y supervisar sus servicios.",
+    "coverage": "Los servicios se ofrecen mediante instituciones públicas y privadas. La cobertura depende del emirato y del tipo de seguro: existen programas públicos para ciudadanos, mientras que los trabajadores extranjeros y sus dependientes acceden principalmente mediante seguros vinculados al empleo o al patrocinador. La atención de salud mental está incluida en los esquemas públicos de protección financiera.",
+    "indicators": "Se recopilan datos sobre consultas, pacientes atendidos, diagnósticos y utilización de servicios. El Atlas de Salud Mental 2024 de la OMS confirma que el país dispone de registros digitales nacionales, identificadores únicos de pacientes y una encuesta nacional de salud mental realizada durante los diez años anteriores. Sin embargo, no se dispone de cifras nacionales recientes y verificables sobre la prevalencia de trastornos mentales en la población.",
+    "plan": "Emiratos Árabes Unidos cuenta con la Ley Federal N.º 10 de 2023 sobre Salud Mental, vigente desde el 30 de mayo de 2024. Su aplicación se complementa con la Resolución del Consejo de Ministros N.º 213 de 2025, cuyo reglamento ejecutivo está vigente desde abril de 2026. Ambos instrumentos regulan la prestación de servicios de salud mental, el funcionamiento de los establecimientos y los derechos de los pacientes."
+  }
 }
