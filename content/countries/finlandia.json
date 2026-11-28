@@ -8,5 +8,12 @@
     "eating": 0.6,
     "bipolar": 0.63,
     "schizophrenia": 0.37
+  },
+  "policy": {
+    "actions": "Se desarrollan programas de prevención, detección temprana, tratamiento y rehabilitación de trastornos mentales. Se presta especial atención a la salud mental de niños y jóvenes, la prevención del suicidio y la reducción del estigma. ",
+    "how": "La atención se organiza mediante los centros de salud, hospitales y servicios comunitarios de las regiones de bienestar. Se busca ofrecer terapias e intervenciones psicológicas desde la atención primaria para evitar que todos los casos dependan de los servicios especializados.",
+    "coverage": "La atención se ofrece mediante el sistema público, financiado principalmente con impuestos, además de servicios privados. En mayo de 2025 entró en vigor una garantía de terapia para menores de 23 años, que establece acceso gratuito a intervenciones psicológicas breves en un plazo máximo de un mes tras la evaluación. Sin embargo, persisten esperas y desigualdades regionales, especialmente en la atención de niños y adolescentes.",
+    "indicators": "Se evalúan indicadores de salud mental, uso de servicios, acceso a tratamientos y prevención del suicidio. En 2024, el 12 % de las personas que necesitaron atención de salud mental declaró no haber recibido los servicios que necesitaba, lo que evidencia dificultades de acceso.",
+    "plan": "Está vigente la Estrategia Nacional de Salud Mental y Programa de Prevención del Suicidio 2020–2030. En febrero de 2025 se aprobó una resolución gubernamental para impulsar su aplicación, con medidas de promoción de la salud mental, prevención del suicidio y coordinación entre sectores durante 2024 - 2027."
   }
 }
