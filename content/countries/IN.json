@@ -1,8 +1,8 @@
 {
-  "iso": "IN",
   "name": "India",
-  "summary": "La escala territorial hace centrales la atención primaria, mhGAP y la formación.",
+  "iso": "IN",
   "region": "asia",
+  "summary": "La escala territorial hace centrales la atención primaria, mhGAP y la formación.",
   "values": {
     "depression": 3.3,
     "anxiety": 3.9,
@@ -10,6 +10,11 @@
     "bipolar": 0.5,
     "schizophrenia": 0.28
   },
-  "policy": {},
-  "observations": []
+  "policy": {
+    "actions": "Programas de promoción, prevención, diagnóstico y tratamiento de trastornos mentales mediante el Programa Nacional de Salud Mental (NMHP). Destacan la prevención del suicidio, la atención de trastornos como depresión y ansiedad y el fortalecimiento de los servicios comunitarios. Además, cuenta con Tele MANAS, un servicio nacional gratuito de orientación y atención de salud mental a distancia, disponible las 24 horas.",
+    "how": "La atención se organiza mediante el Programa Nacional de Salud Mental (NMHP) y su componente distrital (DMHP), integrando centros de atención primaria, establecimientos comunitarios, hospitales distritales y servicios especializados. Los centros Ayushman Arogya Mandir realizan actividades de detección y atención básica, mientras que Tele MANAS facilita orientación telefónica, seguimiento y derivación a servicios presenciales. La organización y disponibilidad de servicios varían entre estados y territorios.",
+    "coverage": "Sistema de salud mixto y segmentado, con servicios públicos, seguros gubernamentales y atención privada. Los establecimientos públicos de atención primaria ofrecen servicios gratuitos de salud, incluida atención básica de salud mental, sin exigir necesariamente afiliación laboral. El programa Ayushman Bharat PM-JAY, con financiamiento estatal, proporciona cobertura financiera para determinadas hospitalizaciones a familias elegibles (población más vulnerable o de edad avanzada), principalmente de grupos vulnerables, pero no constituye un seguro universal para toda la población ni cubre automáticamente todas las consultas de salud mental. Existen también seguros laborales y privados. \nTele MANAS ofrece orientación gratuita a nivel nacional mediante el número 14416. Persisten desigualdades entre zonas urbanas y rurales, escasez de especialistas y barreras económicas.\n",
+    "indicators": "Indicadores como la prevalencia de trastornos mentales, las tasas de suicidio, la utilización de servicios y la disponibilidad de atención especializada. También se monitorean las llamadas atendidas por Tele MANAS y su cobertura territorial. Según la actualización de 2025 incluida en las referencias, este servicio reportó más de 2,982,000 de llamadas acumuladas desde su creación, de las cuales 1,233,399 correspondía hasta noviembre del 2025.",
+    "plan": "El Programa Nacional de Salud Mental (NMHP), establecido en 1982, constituye una de las principales políticas de atención. La Ley de Atención de Salud Mental de 2017 reconoce derechos relacionados con el acceso, tratamiento y protección de las personas con trastornos mentales. También se desarrollan la Estrategia Nacional de Prevención del Suicidio de 2022 y el Programa Nacional de Telesalud Mental, implementado desde 2022. Para el período 2026–2027 se incluyen orientaciones de planificación y seguimiento dentro de la Misión Nacional de Salud (NHM).\nPlan de Implementación de Programas (PIP) Nota Orientativa, 2026–2027 de la Misión Nacional de Salud (NHM), emitida por el Ministerio de Salud y Bienestar Familiar (MoHFW).\n"
+  }
 }
