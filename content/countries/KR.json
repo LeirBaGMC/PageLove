@@ -1,8 +1,8 @@
 {
-  "iso": "KR",
   "name": "Corea del Sur",
-  "summary": "La prevención del suicidio y la salud mental escolar tienen alta prioridad.",
+  "iso": "KR",
   "region": "asia",
+  "summary": "La prevención del suicidio y la salud mental escolar tienen alta prioridad.",
   "values": {
     "depression": 4,
     "anxiety": 5.2,
@@ -10,6 +10,12 @@
     "bipolar": 0.62,
     "schizophrenia": 0.29
   },
-  "policy": {},
-  "observations": []
+  "policy": {
+    "actions": "Se desarrollan programas de promoción de la salud mental, prevención del suicidio, detección temprana, tratamiento y rehabilitación. También se ofrecen servicios de apoyo psicológico para personas que experimentan dificultades emocionales, ansiedad o depresión. El Gobierno impulsa el Programa Nacional de Apoyo al Bienestar Mental, que proporciona sesiones de asesoramiento psicológico profesional. ",
+    "how": "La atención se organiza mediante hospitales, centros de salud y centros comunitarios de salud mental y bienestar. Se busca facilitar la atención temprana, el seguimiento de los pacientes y su integración en la comunidad. El Ministerio de Salud y Bienestar coordina las políticas nacionales, mientras que los gobiernos locales gestionan servicios regionales. ",
+    "coverage": "Corea del Sur cuenta con un sistema de seguro nacional de salud obligatorio, financiado mediante contribuciones y recursos públicos. La cobertura incluye consultas, diagnóstico, tratamiento, hospitalización y rehabilitación, también para problemas de salud mental. Existen copagos que varían según el tipo de establecimiento y servicio.",
+    "indicators": "Se registran los trastornos mentales, las consultas, la utilización de servicios, las hospitalizaciones y los suicidios. En 2024 se registraron 14.872 muertes por suicidio, equivalentes a una tasa de 29,1 por cada 100.000 habitantes. Además, el país realiza encuestas nacionales de salud mental para estimar la prevalencia de trastornos y las necesidades de atención. \n",
+    "plan": "Está vigente el Tercer Plan Básico de Salud Mental y Bienestar (2026 - 2030), que busca fortalecer la prevención, la atención temprana, los servicios comunitarios, el tratamiento y la recuperación de las personas con trastornos mentales. Su marco legal es la Ley de Promoción de la Salud Mental y Apoyo a los Servicios de Bienestar para Pacientes Psiquiátricos, modificada el 12 de febrero de 2026. ",
+    "updated": "Ministerio de Salud y Bienestar – 2026, Centro Nacional de Salud Mental de Corea del Sur – 2026, Oficina de Estadística de Corea – 2025, Servicio Nacional de Seguro de Salud – 2026, Centro de Información Legislativa de Corea – 2025"
+  }
 }
