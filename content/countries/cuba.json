@@ -8,5 +8,13 @@
     "eating": 0.31,
     "bipolar": 0.73,
     "schizophrenia": 0
+  },
+  "policy": {
+    "actions": "Promoción, prevención, diagnóstico, tratamiento y rehabilitación de trastornos mentales mediante su sistema público de salud. Destacan la prevención de la conducta suicida, la atención de las adicciones, el acompañamiento psicológico y la rehabilitación psicosocial. Estas acciones se integran en los servicios comunitarios y en programas nacionales de salud mental coordinados por el Ministerio de Salud Pública (MINSAP).",
+    "how": "La atención se organiza mediante un modelo público, preventivo y comunitario, basado en el Programa del Médico y la Enfermera de la Familia. Los consultorios médicos, policlínicos, servicios comunitarios de salud mental y hospitales conforman una red de atención coordinada. Se priorizan la detección temprana, el seguimiento familiar, la intervención comunitaria y la derivación a especialistas cuando es necesario.",
+    "coverage": "Sistema nacional de salud público, universal y financiado por el Estado, que garantiza atención gratuita a la población cubana sin exigir afiliación laboral, cotizaciones a la seguridad social ni contratación de seguros privados. El acceso se organiza territorialmente mediante consultorios del médico de familia, policlínicos y hospitales, que también brindan atención de salud mental. Sin embargo, la disponibilidad efectiva puede verse limitada por dificultades de infraestructura, medicamentos, recursos y personal especializado. La atención de extranjeros visitantes está sujeta a condiciones específicas.",
+    "indicators": "Indicadores relacionados con la mortalidad por suicidio, la morbilidad por trastornos mentales, las consultas y hospitalizaciones, la disponibilidad de profesionales y la infraestructura sanitaria. La Oficina Nacional de Estadística e Información (ONEI) publica estadísticas nacionales de salud, mientras que el MINSAP desarrolla el seguimiento de programas como el de prevención de la conducta suicida.",
+    "plan": "La Constitución de la República de Cuba de 2019 reconoce el derecho a la salud pública y la responsabilidad estatal de garantizar su atención. El sistema se organiza mediante las políticas del MINSAP, el Programa del Médico y la Enfermera de la Familia y los servicios comunitarios de salud mental. También se desarrolla el Programa Nacional de Prevención de la Conducta Suicida. Se publicó el 23 de enero de 2026 la Ley de Salud Pública en la Gaceta oficial sustituyendo a la histórica Ley Nº 41 de 1983.",
+    "updated": "MINSAP 2025-2026, ONEI 2025, Gaceta Oficial — Legislación de salud pública (2026)"
   }
 }
